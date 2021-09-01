@@ -1,11 +1,11 @@
 ## Welcome to Group 10A's GitHub Page
 ### Group Participants
 
-Glenn Joakim | https://github.com/GlennJoakimB
-Trym Falkum | https://github.com/trfa2
-Mikal Sand | https://github.com/AfGhost
-Aron Sæter | https://github.com/AronSaether
-Maria Osiak | https://github.com/Maria-Osiak
+Glenn Joakim | [https://github.com/GlennJoakimB](https://github.com/GlennJoakimB)
+Trym Falkum | [https://github.com/trfa2](https://github.com/trfa2)
+Mikal Sand | [https://github.com/AfGhost](https://github.com/AfGhost)
+Aron Sæter | [https://github.com/AronSaether](https://github.com/AronSaether)
+Maria Osiak | [https://github.com/Maria-Osiak](https://github.com/Maria-Osiak)
 
 ### Editing Githup pages
 You can use the [editor on GitHub](https://github.com/Maria-Osiak/10A/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
