@@ -1,6 +1,6 @@
 ## Welcome to Group 10A's GitHub Page
 ### Group Participants
-Names | Github links
+
 - Glenn Joakim | https://github.com/GlennJoakimB
 - Trym Falkum | https://github.com/trfa2
 - Mikal Sand | https://github.com/AfGhost
