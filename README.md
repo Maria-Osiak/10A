@@ -4,7 +4,7 @@
 **Glenn J. Bakklund** | *[https://github.com/GlennJoakimB](https://github.com/GlennJoakimB)*
 **Trym Falkum** | *[https://github.com/trfa2](https://github.com/trfa2)*
 **Mikal Sand** | *[https://github.com/AfGhost](https://github.com/AfGhost)*
-**Aron Sæter** | *[https://github.com/AronSaether](https://github.com/AronSaether)*
+**Aron Sæther** | *[https://github.com/AronSaether](https://github.com/AronSaether)*
 **Maria Osiak** | *[https://github.com/Maria-Osiak](https://github.com/Maria-Osiak)*
 
 ### Editing Githup pages
