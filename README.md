@@ -1,45 +1,16 @@
-## Welcome to Group 10A's GitHub Page
-### Group Participants
+## Welcome to Group 10A's Repository
 
+Group Participants | Github links
+---|---
 **Glenn J. Bakklund** | *[https://github.com/GlennJoakimB](https://github.com/GlennJoakimB)*
 **Trym Falkum** | *[https://github.com/trfa2](https://github.com/trfa2)*
 **Mikal Sand** | *[https://github.com/AfGhost](https://github.com/AfGhost)*
 **Aron Sæther** | *[https://github.com/AronSaether](https://github.com/AronSaether)*
 **Maria Osiak** | *[https://github.com/Maria-Osiak](https://github.com/Maria-Osiak)*
 
-### Editing Githup pages
-You can use the [editor on GitHub](https://github.com/Maria-Osiak/10A/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### Link to our Github page
+[https://maria-osiak.github.io/10A/](https://maria-osiak.github.io/10A/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Maria-Osiak/10A/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If we have trouble with pages, check out [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and it might help.
