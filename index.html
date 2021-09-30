@@ -5,15 +5,247 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>Hjemmeside Gruppe 10A</title>
     <style>
+        body {
+        margin: 0px;
+        height: 100%;
+        font-family: sans-serif;
+        }
+        #background {
+        min-height: 100vh;
+        background: linear-gradient(180deg, rgba(63,190,251,1) 0%, rgba(20,20,20,1) 100%);
+        background-repeat: no-repeat;
+        }
 
+        /*---- placement for containers -----*/
+        #main_wrapper {
+        padding: 5px;
+        background: #fff;
+        width: 80%;
+        margin: 0px auto 0px;
+        }
+        #banner {
+        background: #fff;
+        padding: 20px 60px;
+        }
+        #nav_container {
+        background: rgba(59,180,237,1);
+        border-radius: 5px;
+        }
+        #main_container {
+        margin: 60px 0px 10px;
+        border-bottom: 1px solid grey;
+        }
+        #footer {
+        min-height: 100px;
+        padding: 5px 20px 40px;
+        }
+        /*---- placement for containers -----*/
+
+        /*---- Nav Bar ----*/
+        .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        }
+        a.nav_button {
+        margin: 0 15px;
+        padding: 10px;
+        overflow: hidden;
+        color: #000000;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        border-radius: 10px;
+        }
+        a.nav_button:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        }
+        a.nav_button:active {
+        background-color: rgba(0, 0, 0, 0.50);
+        }
+        /*---- Nav Bar ----*/
+
+        /*---- Paragraphs ----*/
+        #h1 {font-size: 40px;}
+        .para {
+        margin-bottom: 20px;
+        }
+        .divi {margin-bottom: 80px;}
+        .header2 {
+        display: flex;
+        font: bold 20px Arial;
+        border-bottom: 1px solid grey;
+        }
+        #visittkort {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        gap: 10px;
+        }
+        .card_row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 10px;
+        }
+        .card {
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        width: 350px;  /*fjern etter fylt kort*/
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px grey;
+        }
+        /*---- Paragraphs ----*/
+
+        /*---- a_buttons ----*/
+        .a_button {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: #000000;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        border-radius: 10px;
+        #box-shadow: 0px 5px 5px grey;
+        }
+        .a_button:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        }
+        .a_button:active {
+        background-color: rgba(0, 0, 0, 0.50);
+        }
+        /*---- a_buttons ----*/
     </style>
 </head>
-<body>
-    <div>
 
+<body>
+<div id="background">
+    <div id="main_wrapper">
+        <div id="banner">
+            <div id="h1">
+                Gruppe 10A
+            </div>
+        </div>
+        <div id="nav_container">   <!--sidecontainer på siden-->
+            <nav class="navigation">
+                <a href="index.html" class="nav_button">Home</a>
+                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+                <a href="hwr-report.html" class="nav_button">HWR-report</a>
+            </nav>
+        </div>
+        <div id="main_container">   <!--hoved-innhold på siden-->
+            <div id="visittkort" class="divi">
+                <span class="header2">
+                    Visittkort
+                </span>
+                <div class="card_row">
+                    <div class="card">
+                        <div>
+                            Glenn Joakim Bakklund
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                            <a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
+                        </div>
+                        <div style="float: right">
+                            <!--<img src="" alt="">
+                            -->
+                            #bilde
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            [Student 2]
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                            <a href="" class="a_button">GitHub</a>
+                        </div>
+                        <div style="float: right">
+                            #bilde
+                        </div>
+                    </div>
+                </div>
+                <div class="card_row">
+                    <div class="card">
+                        <div>
+                            [Student 3]
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                            <a href="" class="a_button">GitHub</a>
+                        </div>
+                        <div style="float: right">
+                            #bilde
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            [Student 4]
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                            <a href="" class="a_button">GitHub</a>
+                        </div>
+                        <div style="float: right">
+                            #bilde
+                        </div>
+                    </div>
+                </div>
+                <div class="card_row">
+                    <div class="card">
+                        <div>
+                            [Student 5]
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                            <a href="" class="a_button">GitHub</a>
+                        </div>
+                        <div style="float: right">
+                            #bilde
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="box" class="divi" >
+                <span class="header2">
+                    Valgfri boks
+                </span>
+                <div class="card">
+                    <div class="para">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda beatae
+                        blanditiis commodi eius excepturi, exercitationem illum molestiae nobis nostrum,
+                        porro quis quod rem reprehenderit soluta tenetur voluptate! Error, sapiente!30
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">   <!--boks på bunden-->
+            <div class="para">
+                2021 Volulompus
+                <p>
+                    <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
+                </p>
+                <p>
+                    <a href="fun.html" class="a_button">Hmmm</a>
+                </p>
+            </div>
+        </div>
     </div>
+</div>
 </body>
 </html>
