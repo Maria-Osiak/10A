@@ -21,18 +21,18 @@
  -->
 </head>
 <body>
-  <div>
-      <div id="nav_container">   <!--sidecontainer på siden-->
-          <nav class="navigation">
-              <a href="index.html" class="nav_button">Home</a>
-              <a href="how-we-roll.html" class="nav_button">How We Roll</a>
-              <a href="hwr-report.html" class="nav_button">HWR-report</a>
-          </nav>
-      </div>
-  </div>
+    <div>
+        <div id="nav_container">   <!--sidecontainer på siden-->
+            <nav class="navigation">
+                <a href="index.html" class="nav_button">Home</a>
+                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+                <a href="hwr-report.html" class="nav_button">HWR-report</a>
+            </nav>
+        </div>
+    </div>
     <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
 
-  <script>
+    <script>
 
     fetch('https://bacit.info/hwr/20210926134925-47352fbdecddd9a754001f4e4abbf40f.json')
     .then(response => response.json())
@@ -42,6 +42,6 @@
     .then(response => response.json())
     .then(data => console.log(data));
 
-  </script>
+    </script>
 </body>
 </html>
