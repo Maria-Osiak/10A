@@ -18,30 +18,35 @@
         background: linear-gradient(180deg, rgba(63,190,251,1) 0%, rgba(20,20,20,1) 100%);
         background-repeat: no-repeat;
         }
+        /*Changes the page if the viewport is small
         @media (max-width:700px){
         #main_wrapper {
-        width: 100%;
+        #width: auto;
         }}
         @media (min-width:1000px){
         #main_wrapper {
-        width: 80%;
-        }}
+        #width: 80%;
+        }}*/
 
         /*---- placement for containers -----*/
         #main_wrapper {
+        #overflow: hidden;
+        max-width: 1100px;
         padding: 5px;
         background: #fff;
         margin: 0px auto 0px;
         }
         #banner {
         background: #fff;
-        padding: 20px 60px;
+        padding: 20px 20px;
         }
         #nav_container {
         background: rgba(59,180,237,1);
         border-radius: 5px;
+        margin: 0px 10px;
         }
         #main_container {
+        overflow: hidden;
         margin: 60px 0px 10px;
         border-bottom: 1px solid grey;
         }
@@ -60,7 +65,6 @@
         a.nav_button {
         margin: 0 15px;
         padding: 10px;
-        #overflow: hidden;
         color: #000000;
         text-align: center;
         text-decoration: none;
@@ -68,21 +72,17 @@
         border-radius: 10px;
         }
         a.nav_button:hover {
-        background-color: rgba(0, 0, 0, 0.25);
-        }
+        background-color: rgba(0, 0, 0, 0.25);}
         a.nav_button:active {
-        background-color: rgba(0, 0, 0, 0.50);
-        }
+        background-color: rgba(0, 0, 0, 0.50);}
         /*---- Nav Bar ----*/
 
         /*---- Paragraphs ----*/
         #h1 {font-size: 40px;}
-        .para {
-        margin-bottom: 20px;
-        }
+        .para {margin-bottom: 20px;}
         .divi {margin-bottom: 80px;}
         .header2 {
-        display: flex;
+        padding-left: 20px;
         font: bold 20px Arial;
         border-bottom: 1px solid grey;
         }
@@ -100,11 +100,10 @@
         gap: 10px;
         }
         .card {
-        /*utseende til kortene*/
         background: #fff;
         padding: 10px;
         margin: 10px;
-        width: 350px;
+        max-width: 350px;
         border-radius: 10px;
         box-shadow: 0px 5px 10px grey;
         }
@@ -118,21 +117,16 @@
 
         /*---- a_buttons ----*/
         .a_button {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0, 0, 0, 0.10);
         color: #000000;
         padding: 5px;
         text-align: center;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         border-radius: 10px;
-        #box-shadow: 0px 5px 5px grey;
         }
-        .a_button:hover {
-        background-color: rgba(0, 0, 0, 0.25);
-        }
-        .a_button:active {
-        background-color: rgba(0, 0, 0, 0.50);
-        }
+        .a_button:hover {background-color: rgba(0, 0, 0, 0.30);}
+        .a_button:active {background-color: rgba(0, 0, 0, 0.50);}
         /*---- a_buttons ----*/
     </style>
 </head>
@@ -162,7 +156,7 @@
                         Glenn Joakim Bakklund
                         <ul>
                             <li>Fra Moi, Rogaland</li>
-                            <li>Liker å tegne</li>
+                            <li>Liker Minecraft</li>
                             <li>Glad i matte</li>
                         </ul>
                         <a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
