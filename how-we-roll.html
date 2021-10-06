@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HowWeRoll prototype (lagring)</title>
+    <title>HowWeRoll prototype Skjema</title>
     <!-- Med denne filen ønsker vi å bevise at vi kan samle inn data ... -->
     <style>
+    body {
+    margin: 0px;
+        height: 100%;
+        font-family: sans-serif;
+        background: rgba(0, 255, 247, 0.3);
+    }
+    #nav_container {
+        background: rgba(59,180,237,1);
+        border-radius: 5px;
+        margin: 0px 10px;
+        }
+    /*---- Nav Bar ----*/
+        .navigation {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        }
+        a.nav_button {
+        margin: 0 15px;
+        padding: 10px;
+        color: #000000;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        border-radius: 10px;
+        }
+        a.nav_button:hover {
+        background-color: rgba(0, 0, 0, 0.25);}
+        a.nav_button:active {
+        background-color: rgba(0, 0, 0, 0.50);}
+        /*---- Nav Bar ----*/
+     .data {
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        max-width: 350px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px grey;
+        }
+    .data {
+        padding: 10px;
+        #margin: 10px;
+        max-width: 350px;
+        border-radius: 10px;
+        #box-shadow: 0px 5px 10px grey;
+    }
+    #result_button {
+    margin: 10px;
+    }
+    #parameter {
+    margin: 10px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bold;
+    }
      /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
     </style>
  <!--
@@ -33,31 +87,72 @@
     <!-- Issue se https://html.spec.whatwg.org/multipage/forms.html#introduction-4 -->
     <hr>
     <form>
-        <p><label for="data01">Data inn felt #1</label>
-            <input type="text" name="data01" id="data01" /></p>
+        <div class="data">
+            <p><label for="data01">Name</label>
+                <input type="text" name="Name" id="data01" /></p>
 
-        <p><label for="data02">Data inn felt #2</label>
-        <input type="text" name="data02" id="data02" /></p>
+            <p><label for="data02">Age</label>
+                <input type="text" name="Age" id="data02" /></p>
 
-        <p>HowWeRoll-parametre:</p>
-        <p>
-            <!-- cora - cooperate or alone -->
-            <label for="cora">Jobbe med det sammen</label>
-            <input type="range" id="cora" name="cora" value="50">
-            <label for="cora">Gå for seg selv og tenke</label>
-        </p>
+            <p><label for="data03">Gender</label>
+                <input type="text" name="Gender" id="data03" /></p><br>
+        </div><br>
 
-        <p>
-            <label>Please choose one of the numbers:
-                <select name="numb">
-                    <option value="ten">10</option>
-                    <option value="twenty">20</option>
-                    <option value="forty" disabled>30</option>
-                </select>
-            </label>
-        </p>
+        <p id="parameter">HowWeRoll-parametre:</p>
+        <div class="data">
+            <p>
+                <!-- coop - cooperate or alone -->
+                <label for="coop">Jobbe i team</label>
+                <input type="range" id="coop" name="Jobber best i team [0] eller alene [100]" value="50">
+                <label for="coop">Jobbe alene</label><br><br>
 
-        <button type="submit">Gjør noe</button>
+                <!-- bird - early bird or an owl -->
+                <label for="bird">Morgenfugl</label>
+                <input type="range" id="bird" name="Er en morgenfugl [0] eller natt menneske [100]" value="50">
+                <label for="bird">Nattugle</label><br><br>
+
+                <!-- wake - wake up or not -->
+                <label for="wake">Liker å stå opp</label>
+                <input type="range" id="wake" name="Liker å stå opp om morgenen[0] eller liker ikke [100]" value="50">
+                <label for="wake">Liker ikke</label><br><br>
+
+                <!-- help - ask for help or not -->
+                <label for="help">Spør om hjelp</label>
+                <input type="range" id="help" name="Flink til å spørre om hjelp [0] eller ikke [100]" value="50">
+                <label for="help">Klarer meg</label><br><br>
+
+                <!-- happy - thrive at the university -->
+                <label for="happy">Trives på UiA</label>
+                <input type="range" id="happy" name="Jeg trives på UiA [0] eller trives ikke [100]" value="50">
+                <label for="happy">Trives ikke</label><br><br>
+
+                <!-- study - love to study -->
+                <label for="study">Elsker å studere</label>
+                <input type="range" id="study" name="Jeg elsker å studere [0] eller elsker ikke [100]" value="50">
+                <label for="study">Elsker ikke</label><br><br>
+
+                <!-- notice - good at letting group members know -->
+                <label for="notice">Gir beskjed</label>
+                <input type="range" id="notice" name="Flink til å gi beskjed [0] eller ikke flink [100]" value="50">
+                <label for="notice">Gir ikke beskjed</label><br><br>
+            </p>
+        </div><br>
+
+        <div class="data">
+            <p>
+                <label>Antall timer brukt på studie i uken:
+                    <select name="Studerer i uken">
+                        <option value="ten">10</option>
+                        <option value="twenty">20</option>
+                        <option value="thirty">30</option>
+                        <option value="forty">40</option>
+                        <option value="fifty" disabled>50</option>
+                    </select>
+                </label>
+            </p>
+        </div><br>
+
+        <button id="result_button" type="submit">Evaluer</button>
     </form>
 
      <div class="results">
