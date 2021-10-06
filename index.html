@@ -101,7 +101,6 @@
         }
         .card {
         background: #fff;
-        padding: 10px;
         margin: 10px;
         max-width: 350px;
         border-radius: 10px;
@@ -113,11 +112,28 @@
         width: 40%;
         }
         .card ul {padding-inline-start: 20px;}
+
+        .card {
+        background-color: rgba(0, 255, 247, 0.3);
+        }
+
+        .card-body
+        {
+        padding: 10px;
+        #margin: 10px;
+        max-width: 350px;
+        border-radius: 10px;
+        #box-shadow: 0px 5px 10px grey;
+        }
+        .card-body:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        }
+
         /*---- Paragraphs ----*/
 
         /*---- a_buttons ----*/
         .a_button {
-        background-color: rgba(0, 0, 0, 0.10);
+        background-color: rgba(3, 140, 138, 0.10);
         color: #000000;
         padding: 5px;
         text-align: center;
@@ -152,39 +168,54 @@
                 </span>
                 <div class="card_row">
                     <div class="card">
+                        <div class="card-body">
                         <img src="Bilder/Glenn.jpg" alt="Bilde av Glenn" class="img">
-                        Glenn Joakim Bakklund
+                            <h3 style="Font-size: 20px">Glenn Joakim Bakklund</h3>
                         <ul>
                             <li>Fra Moi, Rogaland</li>
                             <li>Liker Minecraft</li>
                             <li>Glad i matte</li>
                         </ul>
                         <a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
+                        </div>
                     </div>
                     <div class="card">  <!--visittkort 2-->
+                        <div class="card-body">
                         <img src="Bilder/trym.jpg" alt="Bilde av Trym" class="img">
-                        Trym Falkum
+                            <h3 style="Font-size: 20px">Trym Falkum</h3>
                         <ul>
                             <li>Fra Lyngdal, Sørlandet</li>
                             <li>TEKST TRYM</li>                                                 
                             <li>TEKST TRYM</li>
                         </ul>
+                            <a href="https://github.com/trfa2" class="a_button">GitHub</a>
+                        </div>
                     </div>
                 </div>
                 <div class="card_row">
                     <div class="card">  <!--visittkort 3-->
+                        <div class="card-body">
                        <img src="Bilder/Maria.jpg" alt="Bilde av Maria" class="img">
-                        Maria Osiak
+                            <h3 style="Font-size: 20px">Maria Osiak</h3>
                         <ul>
                             <li>Fra Stavanger, Rogaland</li>
                             <li>Liker å spille videospill</li>
                             <li>Liker å være kreativ</li>
                         </ul>
                         <a href="https://github.com/Maria-Osiak" class="a_button">GitHub</a>
-
+                        </div>
                     </div>
-                    <div class="card">  <!--visittkort 4-->
-                        <!--Her legges alt i kortet-->
+                    <div class="card" id="mikal-c">  <!--visittkort 4-->
+                        <div class="card-body">
+                            <img src="Bilder/Mikal.jpg" alt="Bilde av Mikal" class="img">
+                            <h3 style="Font-size: 20px">Mikal Sand</h3>
+                            <ul>
+                                <li>Fra Sandvika, Bærum</li>
+                                <li>Liker å tegne, biler og IT</li>
+                                <li>Trene og bringe tid med familie</li>
+                            </ul>
+                            <a href="https://github.com/AfGhost" class="a_button">GitHub</a>
+                        </div>
                     </div>
                 </div>
                 <div class="card_row">
