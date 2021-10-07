@@ -156,6 +156,18 @@
         .a_button:active {background-color: rgba(0, 0, 0, 0.6);}
         .a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
         /*---- a_buttons ----*/
+
+        /*---- hidden ----*/
+        .think {
+            opacity: 0;
+            width: 60px;
+            position: absolute;
+            transition: all 0.5s ease-in-out .5s;
+        }
+        .hmm_b:hover .think {
+            opacity: 1;
+        }
+        /*---- hidden ----*/
     </style>
 </head>
 <body>
@@ -252,8 +264,9 @@
                 <p>
                     <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
                 </p>
-                <p>
+                <p class="hmm_b">
                     <a href="fun.html" class="a_button">Hmmm</a>
+                    <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
                 </p>
             </div>
         </div>
