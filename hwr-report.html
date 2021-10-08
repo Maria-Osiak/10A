@@ -36,8 +36,16 @@
         </nav>
     </div>
     <div id="main_container">   <!-- container for hovedinhold -->
+        <div> <!-- Script henter fargene her -->
+            <div id="GlennC" style="color: rgba(174, 255, 171, 1);"></div>
+            <div id="AronC" style="color: rgba(135, 50, 168, 1);"></div>
+            <div id="TrymC" style="color: rgba(200, 227, 45, 1);"></div>
+            <div id="MikalC" style="color: rgba(0, 255, 247, 1);"></div>
+            <div id="Maria" style="color: rgba(66, 135, 245, 1);"></div>
+        </div>
         <div id="medlemmer">
             Tekst   <!-- Legge til farger og navn for å identifisere hver av oss med dotter på en linje? -->
+
         </div>
 
         <canvas id="med_pref" width="470" height="400" style="border:1px solid #000000;"></canvas><!-- Tegnes med JS, her kommer grafen -->
@@ -92,23 +100,81 @@
 
         ctx.stroke(); //ferdig å tegne
 
-
-        //Glenn-test-01
+    //scripten som tegner dottene på linjene:
+        //Glenn
         fetch('https://bacit.info/hwr/20211008100339-5a2e763d64b12c2422f4a0940f854796.json')
             .then(response => response.json())  //Sjekker at responsen er i .json format
             .then(data => { console.log(data)   //lister dataen opp i consoll
-                ctx.beginPath();    //begynner å tegne
-                ctx.arc(data.coop,50,7,0,2 * Math.PI);
-                ctx.fillStyle = "darkmagenta";
-                ctx.fill();
-                ctx.stroke();   //slutter å tegne
-                    //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
+            let color = document.getElementById("GlennC").style.color;   //får fargen fra element med id GlennC
+
+        //mattestykker for å forskyve alle punktene så de stemmer relativt til linjene.
+            let x = 130;
+            let coop = data.coop; let dat1 = Number(x) + Number(coop);  //plusser på 130 til verdien av data.coop
+            let bird = data.bird; let dat2 = Number(x) + Number(bird);  //plusser på 130 til verdien av data.bird
+            let wake = data.wake; let dat3 = Number(x) + Number(wake);  //plusser på 130 til verdien av data.wake
+            let help = data.help; let dat4 = Number(x) + Number(help);  //osv.
+            let happy = data.happy; let dat5 = Number(x) + Number(happy);
+            let study = data.study; let dat6 = Number(x) + Number(study);
+            let notice = data.notice; let dat7 = Number(x) + Number(notice);
+                //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
+
+                //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+        }); //Slutten av Glenn
 
 
-                });
-        fetch('https://bacit.info/hwr/20210926162029-a89356bb617d3bbf870649c08570427e.json') //Janis-Janus
-        .then(response => response.json())
-        .then(data => console.log(data));
+        //Trym
+        fetch('https://bacit.info/hwr/20211008104228-de0a580e3d417a9d3390efeacd5cff50.json')
+            .then(response => response.json())  //Sjekker at responsen er i .json format
+            .then(data => { console.log(data)   //lister dataen opp i consoll
+            let color = document.getElementById("Trymc").style.color;   //får fargen fra element med id TrymC
+
+        //------Mikal! Lim inn her------//
+
+
+
+        }); //Slutten av Trym
 
     </script>
 </body>
