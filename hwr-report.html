@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TITTEL</title>
+    <title>10A hwr-report</title>
     <style>
-     <!-- Her kan stil defineres (vi skal bruke Cascading Style Sheets) -->
+     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+     #main_wrapper {
+        padding: 0 10px;
+     }
+     #med_pref {
+        width: 80%;
+        text-align: center;
+     }
+     div {
+        margin: 15px 0;
+     }
     </style>
  <!--
 
@@ -21,7 +31,7 @@
  -->
 </head>
 <body>
-    <div>
+    <div id="main_wrapper">     <!-- holder alt på siden -->
         <div id="nav_container">   <!--sidecontainer på siden-->
             <nav class="navigation">
                 <a href="index.html" class="nav_button">Home</a>
@@ -31,18 +41,81 @@
                 -->
             </nav>
         </div>
+        <div id="main_container">   <!-- container for hovedinhold -->
+            <div id="medlemmer">
+                Glenn
+                <!-- Legge til farger og navn for å identifisere hver av oss med dotter på en linje? -->
+            </div>
+            <canvas id="med_pref" width="470" height="400" style="border:1px solid #000000;">
+            </canvas>
+        </div>
+        <div id="footer">   <!-- conatiner for bunden -->
+        </div>
     </div>
     <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
 
     <script>
+        let canvas = document.getElementById("med_pref");   //definere canvas-elementet
+        let ctx = canvas.getContext("2d");  //lager og spesifiserer "tegne-objektet", som i dette tilfellet er i 2d
+            //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
 
-    fetch('https://bacit.info/hwr/20210926134925-47352fbdecddd9a754001f4e4abbf40f.json')
-    .then(response => response.json())
-    .then(data => console.log(data));
+        ctx.beginPath();    //begynner å tegne
+        ctx.font = "1em Arial"; //font og tekststørrelse
 
-    fetch('https://bacit.info/hwr/20210926162029-a89356bb617d3bbf870649c08570427e.json')
-    .then(response => response.json())
-    .then(data => console.log(data));
+        ctx.moveTo(130,50);   //linje start x=100 y=50
+        ctx.lineTo(330,50);    //linje slutt x=300 y=50
+        ctx.fillText("Jobbe i team",0,50);   //skrive tekst x=0 y=250
+        ctx.fillText("Jobbe alene",350,50);   //skrive tekst x=500 y=250
+
+        ctx.moveTo(130,100);
+        ctx.lineTo(330,100);
+        ctx.fillText("Morgenfugl",0,100);
+        ctx.fillText("Nattugle",350,100);
+
+        ctx.moveTo(130,150);
+        ctx.lineTo(330,150);
+        ctx.fillText("Liker å stå opp",0,150);
+        ctx.fillText("Liker ikke",350,150);
+
+        ctx.moveTo(130,200);
+        ctx.lineTo(330,200);
+        ctx.fillText("Spør om hjelp",0,200);
+        ctx.fillText("Klarer seg",350,200);
+
+        ctx.moveTo(130,250);
+        ctx.lineTo(330,250);
+        ctx.fillText("Trives på UiA",0,250);
+        ctx.fillText("Trives ikke",350,250);
+
+        ctx.moveTo(130,300);
+        ctx.lineTo(330,300);
+        ctx.fillText("Elsker å studere",0,300);
+        ctx.fillText("Elsker ikke",350,300);
+
+        ctx.moveTo(130,350);
+        ctx.lineTo(330,350);
+        ctx.fillText("Gir beskjed",0,350);
+        ctx.fillText("Gir ikke beskjed",350,350);
+
+        ctx.stroke(); //ferdig å tegne
+
+
+        //Glenn-test-01
+        fetch('https://bacit.info/hwr/20211008100339-5a2e763d64b12c2422f4a0940f854796.json')
+            .then(response => response.json())  //Sjekker at responsen er i .json format
+            .then(data => { console.log(data)   //lister dataen opp i consoll
+                ctx.beginPath();    //begynner å tegne
+                ctx.arc(data.coop,50,7,0,2 * Math.PI);
+                ctx.fillStyle = "darkmagenta";
+                ctx.fill();
+                ctx.stroke();   //slutter å tegne
+                    //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
+
+
+                });
+        fetch('https://bacit.info/hwr/20210926162029-a89356bb617d3bbf870649c08570427e.json') //Janis-Janus
+        .then(response => response.json())
+        .then(data => console.log(data));
 
     </script>
 </body>
