@@ -6,19 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>10A hwr-report</title>
     <style>
-     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
-     #main_wrapper {
-        padding: 0 10px;
-     }
-     #med_pref {
-        width: 80%;
-        text-align: center;
-     }
-     div {
-        margin: 15px 0;
-     }
+        /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+        #med_pref {
+            width: 80%;}
+        }
+
     </style>
- <!--
+    <!--
 
     [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
     [::::::[    [::[             [::[   [::[   [::[  [::[
@@ -28,33 +22,32 @@
     [::::::[        [::[         [::[   [::[         [::[
     [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
 
- -->
+    -->
 </head>
 <body>
-    <div id="main_wrapper">     <!-- holder alt på siden -->
-        <div id="nav_container">   <!--sidecontainer på siden-->
-            <nav class="navigation">
-                <a href="index.html" class="nav_button">Home</a>
-                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
-                <!--
-                <a href="hwr-report.html" class="nav_button">HWR-report</a>
-                -->
-            </nav>
-        </div>
-        <div id="main_container">   <!-- container for hovedinhold -->
-            <div id="medlemmer">
-                Glenn
-                <!-- Legge til farger og navn for å identifisere hver av oss med dotter på en linje? -->
-            </div>
-            <canvas id="med_pref" width="470" height="400" style="border:1px solid #000000;">
-            </canvas>
-        </div>
-        <div id="footer">   <!-- conatiner for bunden -->
-        </div>
+<div id="main_wrapper">     <!-- holder alt på siden -->
+    <div id="nav_container">   <!--sidecontainer på siden-->
+        <nav class="navigation">
+            <a href="index.html" class="nav_button">Home</a>
+            <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+            <!--
+            <a href="hwr-report.html" class="nav_button">HWR-report</a>
+            -->
+        </nav>
     </div>
-    <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+    <div id="main_container">   <!-- container for hovedinhold -->
+        <div id="medlemmer">
+            Tekst   <!-- Legge til farger og navn for å identifisere hver av oss med dotter på en linje? -->
+        </div>
 
-    <script>
+        <canvas id="med_pref" width="470" height="400" style="border:1px solid #000000;"></canvas><!-- Tegnes med JS, her kommer grafen -->
+    </div>
+    <div id="footer">   <!-- conatiner for bunden -->
+    </div>
+</div>
+<!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+
+<script>
         let canvas = document.getElementById("med_pref");   //definere canvas-elementet
         let ctx = canvas.getContext("2d");  //lager og spesifiserer "tegne-objektet", som i dette tilfellet er i 2d
             //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
