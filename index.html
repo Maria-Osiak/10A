@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,14 +45,16 @@
         }
         /*---- placement for containers -----*/
 
+
         /*---- Nav Bar ----*/
         .navigation {
+        	max-width: 500px;
+        	margin: 0 auto;
             display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
+            flex-flow: wrap;
         }
         a.nav_button {
-            margin: 0 15px;
+            margin: 0 auto;
             padding: 10px;
             color: #000000;
             text-align: center;
@@ -65,6 +67,7 @@
         a.nav_button:active {
             background-color: rgba(0, 0, 0, 0.50);}
         /*---- Nav Bar ----*/
+
 
         /*---- Paragraphs ----*/
         h1 {
@@ -86,6 +89,10 @@
         .divi {
             margin-bottom: 80px;
         }
+        /*---- Paragraphs ----*/
+
+
+        /*---- visittkort ----*/
         #visittkort {
             display: flex;
             flex-direction: column;
@@ -93,54 +100,95 @@
             align-content: center;
             gap: 10px;
         }
-        /*---- Paragraphs ----*/
-
-        /*---- visittkort ----*/
-        .card_row {
+        .card_row_container {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row wrap;			/*---- Flex-wrap pakker kortene ved mindre skjerm ----*/
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         .card {
-            padding: 10px;
-            margin: 10px;
-            width: 350px;
-            max-width: 350px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 10px grey;
-            background-color: rgba(0, 255, 247, 0.3);
+            position: relative;
+            padding: 0;
         }
-        .card img {
-            border-radius: 10px;
-            float: right;
-            width: 150px;
-            height: width;
+        .card .face {
+            width: 350px;                      /*---- Bredde på kortene ----*/
+            height: 200px;                     /*---- Høyde på kortene ----*/
+            transition: 0.6s;                  /*---- Raskheten på åpne/lukke kortet ----*/
         }
-        .card ul {
+        .card .face.face1 {
+        	position: relative;
+        	background: #333;                   /*---- Bakgrunnsfargen til selvet bilde-kortet ----*/
+        	display: flex;
+        	justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transform: translateY(100px);
+        }
+        .card:hover .face.face1, .card:active .face.face1 {
+            background: #ff0057;                /*---- bakgrunnsfargen på kortet/bilde-delen (ved åpning) ----*/
+            transform: translateY(0);
+        }
+        .card .face.face1 .content {
+            opacity: 0.4;                       /*---- Front side gjennomsiktighet på kortet (konstant) ----*/
+            transition: 0.5s;
+        }
+        .card:hover .face.face1 .content, .card:active .face.face1 .content {
+            opacity: 1;                        /*---- Front side gjennomsiktighet på kortet (Hover)----*/
+        }
+        .card .face.face1 .content img {
+            max-width: 140px;                  /*---- bildestørrelse på kortet ----*/
+        }
+        .card .face.face1 .content h3 {
+            margin: 10px 0 0;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            font-size: 1.5em;                   /* Text størrelse på kortet (front) */
+        }
+        .card .face.face2 { /* tekst delen av kortet */
+            position: relative;
+            background: lightblue;              /* bakgrunnsfargen til text-delen i kortene */
+            padding: 20px;
+            box-sizing: border-box;
+            #box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            transform: translateY(-100px);
+        }
+        .card:hover .face.face2, .card:active .face.face2 {
+            transform: translateY(0);
+        }
+        .card .face.face2 .content ul {
+            margin: 0;
+            padding: 0;
             padding-inline-start: 20px;
+        }
+
+        /*- kort-knapper -*/
+        .card .face.face2 .content a {
+            margin: 15px 0 0;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 900;
+            color: #333;                        /*---- GitHub text button color (Constant) ----*/
+            padding: 10px;                      /*---- GitHub text button size (all sides) ----*/
+            border: 1px solid #333
+        }
+        .card .face.face2 .content a:hover {
+            background: #333;                   /*---- GitHub button, color (Hover)----*/
+            color: #fff;                        /*---- GitHub button, text color (Hover)----*/
         }
         /*---- visittkort ----*/
 
+
         /*---- kort-farge ----*/
-        #Glenn {
-            background-color: rgba(174, 255, 171, 1);
-        }
-        #Trym {
-            background-color: rgba(200, 227, 45, 0.8);
-        }
-        #Maria {
-            background-color: rgba(66, 135, 245, 0.6);
-        }`
-        #Mikal {
-            background-color: rgba(0, 255, 247, 0.3);
-        }
-        #Aron {
-            background-color: rgba(135, 50, 168, 0.6);
-        }
+        #Glenn {background-color: rgba(174, 255, 171, 1);}
+        #Trym {background-color: rgba(200, 227, 45, 0.8);}
+        #Maria {background-color: rgba(66, 135, 245, 0.6);}
+        #Mikal {background-color: rgba(0, 255, 247, 0.3);}
+        #Aron {background-color: rgba(135, 50, 168, 0.6);}
         /*---- kort-farge ----*/
 
-        /*---- a_buttons ----*/
+
+        /*---- a_buttons (i footer)----*/
         .a_button {
             background-color: rgba(20, 20, 20, 0.2);
             color: #000000;
@@ -149,12 +197,12 @@
             text-decoration: none;
             transition: all 0.2s ease-in-out;
             border-radius: 10px;
-        .a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
         }
         .a_button:hover {background-color: rgba(0, 0, 0, 0.4);}
         .a_button:active {background-color: rgba(0, 0, 0, 0.6);}
         .a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
         /*---- a_buttons ----*/
+
 
         /*---- hidden ----*/
         .think {
@@ -163,6 +211,7 @@
            position: absolute;
            transition: all 0.5s ease-in-out .5s;
         }
+        .hmm_b {width: 150px;}
         .hmm_b:hover .think {
             opacity: 1;
         }
@@ -171,105 +220,134 @@
 </head>
 <body>
 <div id="background">
-    <div id="main_wrapper">
-        <div id="banner">   <!--toppen av siden-->
+	<div id="main_wrapper">
+		<div id="banner">   <!--toppen av siden-->
             <div id="h1">
                 <h1>Gruppe 10A</h1>
             </div>
         </div>
-        <div id="nav_container">   <!--sidecontainer på siden-->
-            <nav class="navigation">    <!--beholder for knappene-->
-                <a href="index.html" class="nav_button">Home</a>
-                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
-                <a href="hwr-report.html" class="nav_button">HWR-report</a>
-            </nav>
-        </div>
-        <div id="main_container">   <!--hoved-innhold på siden-->
-            <div id="visittkort" class="divi">
-                <div class="header2">
-                    <h2>Visittkort</h2>
-                </div>
-                <div class="card_row">
-                    <div class="card" id="Glenn">
-                        <div class="card-body">
-                            <img src="Bilder/Glenn.jpg" alt="Bilde av Glenn">
-                            <h3>Glenn Joakim Bakklund</h3>
-                            <ul>
-                                <li>Fra Moi, Rogaland</li>
-                                <li>Liker dataspill</li>
-                                <li>Glad i matte</li>
-                            </ul>
-                            <a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
-                        </div>
-                    </div>
-                    <div class="card" id="Trym">
-                        <div class="card-body">
-                            <img src="Bilder/trym.jpg" alt="Bilde av Trym">
-                            <h3>Trym Falkum</h3>
-                            <ul>
-                                <li>Fra Lyngdal, Sørlandet</li>
-                                <li>Liker å spille fotball og dataspill</li>
-                                <li>Elsker Manchester United!</li>
-                            </ul>
-                            <a href="https://github.com/trfa2" class="a_button">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_row">
-                    <div class="card" id="Maria">  <!--visittkort 3-->
-                        <div class="card-body">
-                            <img src="Bilder/Maria.jpg" alt="Bilde av Maria">
-                            <h3>Maria Osiak</h3>
-                            <ul>
-                                <li>Fra Stavanger, Rogaland</li>
-                                <li>Liker å spille videospill</li>
-                                <li>Liker å være kreativ</li>
-                            </ul>
-                            <a href="https://github.com/Maria-Osiak" class="a_button">GitHub</a>
-                        </div>
-                    </div>
-                    <div class="card" id="Mikal">  <!--visittkort 4-->
-                        <div class="card-body">
-                            <img src="Bilder/Mikal.jpg" alt="Bilde av Mikal">
-                            <h3>Mikal Sand</h3>
-                            <ul>
-                                <li>Fra Sandvika, Bærum</li>
-                                <li>Liker å tegne, biler og IT</li>
-                                <li>Trene og bringe tid med familie</li>
-                            </ul>
-                            <a href="https://github.com/AfGhost" class="a_button">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card_row">
-                    <div class="card" id="Aron">  <!--visittkort 5-->
-                        <div class="card-body">
-                            <img src="Bilder/aron.png" alt="Bilde av Aron">
-                            <h3>Aron Sæther</h3>
-                            <ul>
-                                <li>Fra Leksvik, Trøndelag</li>
-                                <li>Liker å game'e og se serie</li>
-                                <li>KSI Håndball-medlem</li>
-                            </ul>
-                            <a href="https://github.com/AronSaether" class="a_button">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="footer">   <!--boks på bunden-->
-            <div class="para">
-                2021 Volulompus
-                <p>
-                    <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
-                </p>
-                <p class="hmm_b">
-                    <a href="fun.html" class="a_button">Hmmm</a>
-                    <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
-                </p>
-            </div>
-        </div>
-    </div>
+		<div id="nav_container">   <!--sidecontainer på siden-->    <!--Ny2-->
+			<nav class="navigation">    <!--beholder for knappene-->    <!--Ny3-->
+				<a href="index.html" class="nav_button">Home</a>
+				<a href="how-we-roll.html" class="nav_button">How We Roll</a>
+				<a href="hwr-report.html" class="nav_button">HWR-report</a>
+			</nav>
+		</div>
+		<div id="main_container">   <!--hoved-innhold på siden-->
+			<div id="visittkort" class="divi">
+				<div class="header2">
+					<h2>Visittkort</h2>
+				</div>
+				<div class="card_row_container">
+					<div class="card" id="Glenn">  <!--visittkort 1 Glenn-->
+							<div class="face face1">
+								<div class="content">
+									<img src="bilder/Glenn.jpg">
+									<h3>Glenn Joakim Bakklund</h3>
+								</div>
+							</div>
+							<div class="face face2">
+								<div class="content">
+									<ul>
+										<li>Fra Moi, Rogaland</li>
+										<li>Liker dataspill</li>
+										<li>Glad i matte</li>
+									</ul><a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
+								</div>
+							</div>
+						</div>
+					<div class="card" id="Mikal">  <!--visittkort 2 Mikal-->
+							<div class="face face1">
+								<div class="content">
+									<img src="bilder/Mikal.jpg" alt="Bilde av Mikal">
+									<h3>Mikal Sand</h3>
+								</div>
+							</div>
+							<div class="face face2">
+								<div class="content">
+									<ul>
+										<li>Fra Sandvika, Bærum</li>
+										<li>Interessert i å tegne, biler og IT</li>
+										<li>Liker å trene og bringe tid med familie</li>
+									</ul>
+									<a href="https://github.com/AfGhost" class="a_button">GitHub</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="card_row_container">
+					<div class="card" id="Trym">    <!--visittkort 3 Trym-->
+							<div class="face face1">
+								<div class="content">
+									<img src="bilder/Trym.jpg" alt="Bilde av Trym">
+									<h3>Trym Falkum</h3>
+								</div>
+							</div>
+							<div class="face face2">
+								<div class="content">
+									<ul>
+										<li>Fra Lyngdal, Sørlandet</li>
+										<li>TEKST TRYM</li>
+										<li>TEKST TRYM</li>
+									</ul>
+									<a href="https://github.com/trfa2" class="a_button">GitHub</a>
+								</div>
+							</div>
+						</div>
+					<div class="card" id="Maria">    <!--visittkort 4 Maria-->
+							<div class="face face1">
+								<div class="content">
+									<img src="bilder/Maria.jpg" alt="Bilde av Maria">
+									<h3>Maria Osiak</h3>
+								</div>
+							</div>
+							<div class="face face2">
+								<div class="content">
+									<ul>
+										<li>Fra Stavanger, Rogaland</li>
+										<li>Liker å spille videospill</li>
+										<li>Liker å være kreativ</li>
+									</ul>
+									<a href="https://github.com/Maria-Osiak" class="a_button">GitHub</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="card_row_container">
+					<div class="card" id="Aron">    <!--visittkort 5 Aron-->
+							<div class="face face1">
+								<div class="content">
+									<img src="bilder/Aron.jpg" alt="Bilde av Aron">
+									<h3>Aron Sæther</h3>
+								</div>
+							</div>
+							<div class="face face2">
+								<div class="content">
+									<ul>
+										<li>Fra Leksvik, Trøndelag</li>
+										<li>Liker å game'e og se serie</li>
+										<li>KSI Håndball-medlem</li>
+									</ul>
+									<a href="https://github.com/AronSaether" class="a_button">GitHub</a>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">   <!--boks på bunden-->
+			<div class="para">
+				2021 Volulompus
+				<p>
+					<a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
+				</p>
+				<p class="hmm_b">
+					<a href="fun.html" class="a_button">Hmmm</a>
+					<img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 </body>
 </html>
