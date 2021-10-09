@@ -38,6 +38,7 @@
         a.nav_button:active {
         background-color: rgba(0, 0, 0, 0.50);}
         /*---- Nav Bar ----*/
+
      .data {
         background: #fff;
         padding: 10px;
@@ -53,6 +54,16 @@
         border-radius: 10px;
         #box-shadow: 0px 5px 10px grey;
     }
+        /*---- Group name heading ----*/
+    h4{
+        padding-left: 20px;
+        font: bold 20px Arial;
+        }
+
+    #footer {
+        min-height: 100px;
+        padding: 5px 20px 40px;
+        }
     #result_button {
     margin: 10px;
     }
@@ -67,6 +78,18 @@
     #nav_container {
     font-weight: bold;
     }
+    /*---- hidden ----*/
+        .think {
+           opacity: 0;
+           width: 60px;
+           position: absolute;
+           transition: all 0.5s ease-in-out .5s;
+        }
+    .hmm_b:hover .think {
+        opacity: 1;
+        }
+
+
      /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
     </style>
  <!--
@@ -82,6 +105,9 @@
 <body>
 <div>
     <div id="nav_container">   <!--sidecontainer på siden-->
+        <div id="h1">
+            <h4>Gruppe 10A</h4>
+        </div>
         <nav class="navigation">
             <a href="index.html" class="nav_button">Home</a>
             <!--<a href="how-we-roll.html" class="nav_button">How We Roll</a>-->
@@ -104,7 +130,7 @@
                 <input type="text" name="Gender" id="data03" /></p><br>
         </div><br>
 
-        <p id="parameter">HowWeRoll-parametre:</p>
+        <p id="parameter">HowWeRoll-Parametre:</p>
         <div class="data">
             <p>
                 <!-- coop - cooperate or alone -->
@@ -172,6 +198,18 @@
          <h2>Form Data</h2>
          <pre></pre>
      </div>
+<div id="footer">   <!--boks på bunden-->
+    <div class="para">
+        2021 Volulompus
+        <p>
+            <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
+        </p>
+        <p class="hmm_b">
+            <a href="fun.html" class="a_button">Hmmm</a>
+            <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
+        </p>
+    </div>
+</div>
 
     <script>
     // Example POST method implementation using fetch:
