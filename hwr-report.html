@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>10A hwr-report</title>
+    <style>
+        /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+        #med_pref {
+            width: 80%;}
+        }
+
+    </style>
+    <!--
+
+    [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+    [::::::[    [::[             [::[   [::[   [::[  [::[
+      [::[      [::[             [::[   [::[   [::[  [::[
+      [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+      [::[          [::[         [::[   [::[         [::[
+    [::::::[        [::[         [::[   [::[         [::[
+    [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+
+    -->
+</head>
+<body>
+<div id="main_wrapper">     <!-- holder alt på siden -->
+    <div id="nav_container">   <!--sidecontainer på siden-->
+        <nav class="navigation">
+            <a href="index.html" class="nav_button">Home</a>
+            <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+            <!--
+            <a href="hwr-report.html" class="nav_button">HWR-report</a>
+            -->
+        </nav>
+    </div>
+    <div id="main_container">   <!-- container for hovedinhold -->
+        <div> <!-- Script henter fargene her -->
+            <div id="GlennC" style="color: rgba(174, 255, 171, 1);"></div>
+            <div id="AronC" style="color: rgba(135, 50, 168, 1);"></div>
+            <div id="TrymC" style="color: rgba(200, 227, 45, 1);"></div>
+            <div id="MikalC" style="color: rgba(0, 255, 247, 1);"></div>
+            <div id="Maria" style="color: rgba(66, 135, 245, 1);"></div>
+        </div>
+        <div id="medlemmer">
+            Tekst   <!-- Legge til farger og navn for å identifisere hver av oss med dotter på en linje? -->
+
+        </div>
+
+        <canvas id="med_pref" width="470" height="400" style="border:1px solid #000000;"></canvas><!-- Tegnes med JS, her kommer grafen -->
+    </div>
+    <div id="footer">   <!-- conatiner for bunden -->
+    </div>
+</div>
+<!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+
+<script>
+        let canvas = document.getElementById("med_pref");   //definere canvas-elementet
+        let ctx = canvas.getContext("2d");  //lager og spesifiserer "tegne-objektet", som i dette tilfellet er i 2d
+            //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
+
+        ctx.beginPath();    //begynner å tegne
+        ctx.font = "1em Arial"; //font og tekststørrelse
+
+        ctx.moveTo(130,50);   //linje start x=100 y=50
+        ctx.lineTo(330,50);    //linje slutt x=300 y=50
+        ctx.fillText("Jobbe i team",0,50);   //skrive tekst x=0 y=250
+        ctx.fillText("Jobbe alene",350,50);   //skrive tekst x=500 y=250
+
+        ctx.moveTo(130,100);
+        ctx.lineTo(330,100);
+        ctx.fillText("Morgenfugl",0,100);
+        ctx.fillText("Nattugle",350,100);
+
+        ctx.moveTo(130,150);
+        ctx.lineTo(330,150);
+        ctx.fillText("Liker å stå opp",0,150);
+        ctx.fillText("Liker ikke",350,150);
+
+        ctx.moveTo(130,200);
+        ctx.lineTo(330,200);
+        ctx.fillText("Spør om hjelp",0,200);
+        ctx.fillText("Klarer seg",350,200);
+
+        ctx.moveTo(130,250);
+        ctx.lineTo(330,250);
+        ctx.fillText("Trives på UiA",0,250);
+        ctx.fillText("Trives ikke",350,250);
+
+        ctx.moveTo(130,300);
+        ctx.lineTo(330,300);
+        ctx.fillText("Elsker å studere",0,300);
+        ctx.fillText("Elsker ikke",350,300);
+
+        ctx.moveTo(130,350);
+        ctx.lineTo(330,350);
+        ctx.fillText("Gir beskjed",0,350);
+        ctx.fillText("Gir ikke beskjed",350,350);
+
+        ctx.stroke(); //ferdig å tegne
+
+    //scripten som tegner dottene på linjene:
+        //Glenn
+        fetch('https://bacit.info/hwr/20211008100339-5a2e763d64b12c2422f4a0940f854796.json')
+            .then(response => response.json())  //Sjekker at responsen er i .json format
+            .then(data => { console.log(data)   //lister dataen opp i consoll
+            let color = document.getElementById("GlennC").style.color;   //får fargen fra element med id GlennC
+
+        //mattestykker for å forskyve alle punktene så de stemmer relativt til linjene.
+            let x = 130;
+            let coop = data.coop; let dat1 = Number(x) + Number(coop);  //plusser på 130 til verdien av data.coop
+            let bird = data.bird; let dat2 = Number(x) + Number(bird);  //plusser på 130 til verdien av data.bird
+            let wake = data.wake; let dat3 = Number(x) + Number(wake);  //plusser på 130 til verdien av data.wake
+            let help = data.help; let dat4 = Number(x) + Number(help);  //osv.
+            let happy = data.happy; let dat5 = Number(x) + Number(happy);
+            let study = data.study; let dat6 = Number(x) + Number(study);
+            let notice = data.notice; let dat7 = Number(x) + Number(notice);
+                //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
+
+                //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+        }); //Slutten av Glenn
+
+
+        //Trym
+        fetch('https://bacit.info/hwr/20211008104228-de0a580e3d417a9d3390efeacd5cff50.json')
+            .then(response => response.json())  //Sjekker at responsen er i .json format
+            .then(data => { console.log(data)   //lister dataen opp i consoll
+            let color = document.getElementById("Trymc").style.color;   //får fargen fra element med id TrymC
+
+        //------Mikal! Lim inn her------//
+
+
+
+        }); //Slutten av Trym
+
+    </script>
+</body>
+</html>

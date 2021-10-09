@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hjemmeside Gruppe 10A</title>
+    <!--language=css-->
+    <style>
+        body {
+            margin: 0px;
+            height: 100%;
+            font-family: sans-serif;
+            background: rgba(20,20,20,1);
+        }
+        #background {
+            min-height: 100vh;
+            background: linear-gradient(180deg, rgba(63,190,251,1) 0%, rgba(20,20,20,1) 100%);
+            background-repeat: no-repeat;
+        }
+
+        /*---- placement for containers -----*/
+        #main_wrapper {
+            max-width: 1100px;
+            padding: 5px;
+            background: #fff;
+            margin: 0px auto 0px;
+        }
+        #banner {
+            background: #fff;
+        }
+        #nav_container {
+            background: rgba(59,180,237,1);
+            border-radius: 5px;
+        }
+        #main_container {
+            overflow: hidden;
+            margin: 60px 0px 10px;
+            border-bottom: 1px solid grey;
+        }
+        #footer {
+            min-height: 100px;
+            padding: 5px 20px 40px;
+        }
+        /*---- placement for containers -----*/
+
+        /*---- Nav Bar ----*/
+        .navigation {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        a.nav_button {
+            margin: 0 15px;
+            padding: 10px;
+            color: #000000;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            border-radius: 10px;
+        }
+        a.nav_button:hover {
+            background-color: rgba(0, 0, 0, 0.25);}
+        a.nav_button:active {
+            background-color: rgba(0, 0, 0, 0.50);}
+        /*---- Nav Bar ----*/
+
+        /*---- Paragraphs ----*/
+        h1 {
+            padding-left: 20px;
+            font: bold 40px Arial;
+        }
+        h2 {
+            padding-left: 20px;
+            font: bold 30px Arial;
+            border-bottom: 1px solid grey;
+        }
+        h3 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .para {
+            margin-bottom: 20px;
+        }
+        .divi {
+            margin-bottom: 80px;
+        }
+        #visittkort {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            gap: 10px;
+        }
+        /*---- Paragraphs ----*/
+
+        /*---- visittkort ----*/
+        .card_row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .card {
+            padding: 10px;
+            margin: 10px;
+            width: 350px;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px grey;
+            background-color: rgba(0, 255, 247, 0.3);
+        }
+        .card img {
+            border-radius: 10px;
+            float: right;
+            width: 40%;
+        }
+        .card ul {
+            padding-inline-start: 20px;
+        }
+        /*---- visittkort ----*/
+
+        /*---- kort-farge ----*/
+        #Glenn {
+            background-color: rgba(174, 255, 171, 1);
+        }
+        #Trym {
+            background-color: rgba(200, 227, 45, 0.8);
+        }
+        #Maria {
+            background-color: rgba(66, 135, 245, 0.6);
+        }`
+        #Mikal {
+            background-color: rgba(0, 255, 247, 0.3);
+        }
+        #Aron {
+            background-color: rgba(135, 50, 168, 0.6);
+        }
+        /*---- kort-farge ----*/
+
+        /*---- a_buttons ----*/
+        .a_button {
+            background-color: rgba(20, 20, 20, 0.2);
+            color: #000000;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            border-radius: 10px;
+        .a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
+        }
+        .a_button:hover {background-color: rgba(0, 0, 0, 0.4);}
+        .a_button:active {background-color: rgba(0, 0, 0, 0.6);}
+        .a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
+        /*---- a_buttons ----*/
+
+        /*---- hidden ----*/
+        .think {
+           opacity: 0;
+           width: 60px;
+           position: absolute;
+           transition: all 0.5s ease-in-out .5s;
+        }
+        .hmm_b:hover .think {
+            opacity: 1;
+        }
+        /*---- hidden ----*/
+    </style>
+</head>
+<body>
+<div id="background">
+    <div id="main_wrapper">
+        <div id="banner">   <!--toppen av siden-->
+            <div id="h1">
+                <h1>Gruppe 10A</h1>
+            </div>
+        </div>
+        <div id="nav_container">   <!--sidecontainer på siden-->
+            <nav class="navigation">    <!--beholder for knappene-->
+                <a href="index.html" class="nav_button">Home</a>
+                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+                <a href="hwr-report.html" class="nav_button">HWR-report</a>
+            </nav>
+        </div>
+        <div id="main_container">   <!--hoved-innhold på siden-->
+            <div id="visittkort" class="divi">
+                <div class="header2">
+                    <h2>Visittkort</h2>
+                </div>
+                <div class="card_row">
+                    <div class="card" id="Glenn">
+                        <div class="card-body">
+                            <img src="Bilder/Glenn.jpg" alt="Bilde av Glenn">
+                            <h3>Glenn Joakim Bakklund</h3>
+                            <ul>
+                                <li>Fra Moi, Rogaland</li>
+                                <li>Liker dataspill</li>
+                                <li>Glad i matte</li>
+                            </ul>
+                            <a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="card_row">
+                    <div class="card" id="Trym">
+                        <div class="card-body">
+                            <img src="Bilder/trym.jpg" alt="Bilde av Trym">
+                            <h3>Trym Falkum</h3>
+                            <ul>
+                                <li>Fra Lyngdal, Sørlandet</li>
+                                <li>Liker å spille fotball og dataspill</li>
+                                <li>Elsker Manchester United!</li>
+                            </ul>
+                            <a href="https://github.com/trfa2" class="a_button">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_row">
+                    <div class="card" id="Maria">  <!--visittkort 3-->
+                        <div class="card-body">
+                            <img src="Bilder/Maria.jpg" alt="Bilde av Maria">
+                            <h3>Maria Osiak</h3>
+                            <ul>
+                                <li>Fra Stavanger, Rogaland</li>
+                                <li>Liker å spille videospill</li>
+                                <li>Liker å være kreativ</li>
+                            </ul>
+                            <a href="https://github.com/Maria-Osiak" class="a_button">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="card" id="Mikal">  <!--visittkort 4-->
+                        <div class="card-body">
+                            <img src="Bilder/Mikal.jpg" alt="Bilde av Mikal">
+                            <h3>Mikal Sand</h3>
+                            <ul>
+                                <li>Fra Sandvika, Bærum</li>
+                                <li>Liker å tegne, biler og IT</li>
+                                <li>Trene og bringe tid med familie</li>
+                            </ul>
+                            <a href="https://github.com/AfGhost" class="a_button">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_row">
+                    <div class="card" id="Aron">  <!--visittkort 5-->
+                        <div class="card-body">
+                            <img src="Bilder/aron.png" alt="Bilde av Aron">
+                            <h3>Aron Sæther</h3>
+                            <ul>
+                                <li>Fra Leksvik, Trøndelag</li>
+                                <li>Liker å game'e og se serie</li>
+                                <li>KSI Håndball-medlem</li>
+                            </ul>
+                            <a href="https://github.com/AronSaether" class="a_button">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">   <!--boks på bunden-->
+            <div class="para">
+                2021 Volulompus
+                <p>
+                    <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
+                </p>
+                <p class="hmm_b">
+                    <a href="fun.html" class="a_button">Hmmm</a>
+                    <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
