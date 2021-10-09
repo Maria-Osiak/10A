@@ -117,7 +117,7 @@
         }
         .card .face.face1 {
         	position: relative;
-        	background: #333;                   /*---- Bakgrunnsfargen til selvet bilde-kortet ----*/
+        	background: #333;                   /*---- Bakgrunnsfargen til selvet bilde-kortet (før hover/konstant) ----*/
         	display: flex;
         	justify-content: center;
             align-items: center;
@@ -125,7 +125,7 @@
             transform: translateY(100px);
         }
         .card:hover .face.face1, .card:active .face.face1 {
-            background: #ff0057;                /*---- bakgrunnsfargen på kortet/bilde-delen (ved åpning) ----*/
+            background-color: rgb(255,0,0,0.2); /*---- bakg.fargen på kortet/bilde-delen(ved åpning/hover)endret farge fra background: #ff0057; ----*/
             transform: translateY(0);
         }
         .card .face.face1 .content {
@@ -242,7 +242,7 @@
 					<div class="card" id="Glenn">  <!--visittkort 1 Glenn-->
 							<div class="face face1">
 								<div class="content">
-									<img src="bilder/Glenn.jpg">
+									<img src="Bilder/Glenn.jpg" alt="Bilde av Glenn">
 									<h3>Glenn Joakim Bakklund</h3>
 								</div>
 							</div>
@@ -259,7 +259,7 @@
 					<div class="card" id="Mikal">  <!--visittkort 2 Mikal-->
 							<div class="face face1">
 								<div class="content">
-									<img src="bilder/Mikal.jpg" alt="Bilde av Mikal">
+									<img src="Bilder/Mikal.jpg" alt="Bilde av Mikal">
 									<h3>Mikal Sand</h3>
 								</div>
 							</div>
@@ -279,7 +279,7 @@
 					<div class="card" id="Trym">    <!--visittkort 3 Trym-->
 							<div class="face face1">
 								<div class="content">
-									<img src="bilder/Trym.jpg" alt="Bilde av Trym">
+									<img src="Bilder/Trym.jpg" alt="Bilde av Trym">
 									<h3>Trym Falkum</h3>
 								</div>
 							</div>
@@ -297,7 +297,7 @@
 					<div class="card" id="Maria">    <!--visittkort 4 Maria-->
 							<div class="face face1">
 								<div class="content">
-									<img src="bilder/Maria.jpg" alt="Bilde av Maria">
+									<img src="Bilder/Maria.jpg" alt="Bilde av Maria">
 									<h3>Maria Osiak</h3>
 								</div>
 							</div>
@@ -317,7 +317,7 @@
 					<div class="card" id="Aron">    <!--visittkort 5 Aron-->
 							<div class="face face1">
 								<div class="content">
-									<img src="bilder/Aron.jpg" alt="Bilde av Aron">
+									<img src="Bilder/Aron.jpg" alt="Bilde av Aron">
 									<h3>Aron Sæther</h3>
 								</div>
 							</div>
