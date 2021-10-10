@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hjemmeside Gruppe 10A</title>
     <!--language=css-->
     <style>
+    /*
+    "Cascading Style Sheets (CSS) is a simple mechanism for adding style
+    (e.g., fonts, colors, spacing) to Web documents."
+    Bos.B. (08.10.2021). WHAT IS CSS?. Fra https://www.w3.org/Style/CSS/#specs (10.10.2021)
+    */
         body {
             margin: 0px;
             height: 100%;
@@ -218,136 +222,149 @@
         /*---- hidden ----*/
     </style>
 </head>
-<body>
+<body>  <!-- body har egen bakgrunn som fylle inn dersom bruker klarer å se utenfor det som regnes som viewport -->
+<!--
+    "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure
+    of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation
+    (CSS) or functionality/behavior (JavaScript)."
+    MDN contributors. (03.10.2021). HTML: HyperText Markup Language. Fra
+    https://developer.mozilla.org/en-US/docs/Web/HTML (sett 10.10.2021)
+-->
 <div id="background">
-	<div id="main_wrapper">
-		<div id="banner">   <!--toppen av siden-->
+    <div id="main_wrapper"> <!-- skilder bakgrunnen fra resten av innholdet på siden -->
+        <div id="banner">   <!--toppen av siden-->
             <div id="h1">
                 <h1>Gruppe 10A</h1>
             </div>
         </div>
-		<div id="nav_container">   <!--sidecontainer på siden-->    <!--Ny2-->
-			<nav class="navigation">    <!--beholder for knappene-->    <!--Ny3-->
-				<a href="index.html" class="nav_button">Home</a>
-				<a href="how-we-roll.html" class="nav_button">How We Roll</a>
-				<a href="hwr-report.html" class="nav_button">HWR-report</a>
-			</nav>
-		</div>
-		<div id="main_container">   <!--hoved-innhold på siden-->
-			<div id="visittkort" class="divi">
-				<div class="header2">
-					<h2>Visittkort</h2>
-				</div>
-				<div class="card_row_container">
-					<div class="card" id="Glenn">  <!--visittkort 1 Glenn-->
-							<div class="face face1">
-								<div class="content">
-									<img src="Bilder/Glenn.jpg" alt="Bilde av Glenn">
-									<h3>Glenn Joakim Bakklund</h3>
-								</div>
-							</div>
-							<div class="face face2">
-								<div class="content">
-									<ul>
-										<li>Fra Moi, Rogaland</li>
-										<li>Liker dataspill</li>
-										<li>Glad i matte</li>
-									</ul><a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
-								</div>
-							</div>
-						</div>
-					<div class="card" id="Mikal">  <!--visittkort 2 Mikal-->
-							<div class="face face1">
-								<div class="content">
-									<img src="Bilder/Mikal.jpg" alt="Bilde av Mikal">
-									<h3>Mikal Sand</h3>
-								</div>
-							</div>
-							<div class="face face2">
-								<div class="content">
-									<ul>
-										<li>Fra Sandvika, Bærum</li>
-										<li>Interessert i å tegne, biler og IT</li>
-										<li>Liker å trene og bringe tid med familie</li>
-									</ul>
-									<a href="https://github.com/AfGhost" class="a_button">GitHub</a>
-								</div>
-							</div>
-						</div>
-				</div>
-				<div class="card_row_container">
-					<div class="card" id="Trym">    <!--visittkort 3 Trym-->
-							<div class="face face1">
-								<div class="content">
-									<img src="Bilder/Trym.jpg" alt="Bilde av Trym">
-									<h3>Trym Falkum</h3>
-								</div>
-							</div>
-							<div class="face face2">
-								<div class="content">
-									<ul>
-										<li>Fra Lyngdal, Sørlandet</li>
-										<li>TEKST TRYM</li>
-										<li>TEKST TRYM</li>
-									</ul>
-									<a href="https://github.com/trfa2" class="a_button">GitHub</a>
-								</div>
-							</div>
-						</div>
-					<div class="card" id="Maria">    <!--visittkort 4 Maria-->
-							<div class="face face1">
-								<div class="content">
-									<img src="Bilder/Maria.jpg" alt="Bilde av Maria">
-									<h3>Maria Osiak</h3>
-								</div>
-							</div>
-							<div class="face face2">
-								<div class="content">
-									<ul>
-										<li>Fra Stavanger, Rogaland</li>
-										<li>Liker å spille videospill</li>
-										<li>Liker å være kreativ</li>
-									</ul>
-									<a href="https://github.com/Maria-Osiak" class="a_button">GitHub</a>
-								</div>
-							</div>
-						</div>
-				</div>
-				<div class="card_row_container">
-					<div class="card" id="Aron">    <!--visittkort 5 Aron-->
-							<div class="face face1">
-								<div class="content">
-									<img src="Bilder/Aron.jpg" alt="Bilde av Aron">
-									<h3>Aron Sæther</h3>
-								</div>
-							</div>
-							<div class="face face2">
-								<div class="content">
-									<ul>
-										<li>Fra Leksvik, Trøndelag</li>
-										<li>Liker å game'e og se serie</li>
-										<li>KSI Håndball-medlem</li>
-									</ul>
-									<a href="https://github.com/AronSaether" class="a_button">GitHub</a>
-								</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
-		<div id="footer">   <!--boks på bunden-->
-			<div class="para">
-				2021 Volulompus
-				<p>
-					<a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
-				</p>
-				<p class="hmm_b">
-					<a href="fun.html" class="a_button">Hmmm</a>
-					<img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
-				</p>
-			</div>
-		</div>
-	</div>
+        <div id="nav_container">   <!--sidecontainer på siden-->    <!--Ny2-->
+            <nav class="navigation">    <!--beholder for knappene-->    <!--Ny3-->
+                <a href="index.html" class="nav_button">Home</a>
+                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+                <a href="hwr-report.html" class="nav_button">HWR-report</a>
+                <!-- a fra https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a (sett 30.09.2021) -->
+            </nav>
+        </div>
+        <div id="main_container">   <!--hoved-innhold på siden-->
+            <div id="visittkort" class="divi">
+                <div class="header2">
+                    <h2>Visittkort</h2>
+                </div>
+                <div class="card_row_container">
+                    <div class="card" id="Glenn">  <!--visittkort 1 Glenn-->
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="Bilder/Glenn.jpg" alt="Bilde av Glenn">
+                                <!-- img fra https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img (sett 04.10.2021) -->
+                                <h3>Glenn Joakim Bakklund</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <ul>
+                                    <li>Fra Moi, Rogaland</li>
+                                    <li>Liker dataspill</li>
+                                    <li>Glad i matte</li>
+                                </ul><!-- ul element fra https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul (sett 30.09.2021)-->
+                                <a href="https://github.com/GlennJoakimB" class="a_button">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="Mikal">  <!--visittkort 2 Mikal-->
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="Bilder/Mikal.jpg" alt="Bilde av Mikal">
+                                <h3>Mikal Sand</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <ul>
+                                    <li>Fra Sandvika, Bærum</li>
+                                    <li>Interessert i å tegne, biler og IT</li>
+                                    <li>Liker å trene og bringe tid med familie</li>
+                                </ul>
+                                <a href="https://github.com/AfGhost" class="a_button">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_row_container">
+                    <div class="card" id="Trym">    <!--visittkort 3 Trym-->
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="Bilder/Trym.jpg" alt="Bilde av Trym">
+                                <h3>Trym Falkum</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <ul>
+                                    <li>Fra Lyngdal, Sørlandet</li>
+                                    <li>TEKST TRYM</li>
+                                    <li>TEKST TRYM</li>
+                                </ul>
+                                <a href="https://github.com/trfa2" class="a_button">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="Maria">    <!--visittkort 4 Maria-->
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="Bilder/Maria.jpg" alt="Bilde av Maria">
+                                <h3>Maria Osiak</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <ul>
+                                    <li>Fra Stavanger, Rogaland</li>
+                                    <li>Liker å spille videospill</li>
+                                    <li>Liker å være kreativ</li>
+                                </ul>
+                                <a href="https://github.com/Maria-Osiak" class="a_button">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card_row_container">
+                    <div class="card" id="Aron">    <!--visittkort 5 Aron-->
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="Bilder/Aron.jpg" alt="Bilde av Aron">
+                                <h3>Aron Sæther</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <ul>
+                                    <li>Fra Leksvik, Trøndelag</li>
+                                    <li>Liker å game'e og se serie</li>
+                                    <li>KSI Håndball-medlem</li>
+                                </ul>
+                                <a href="https://github.com/AronSaether" class="a_button">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">   <!--boks på bunden-->
+            <div class="para">
+                2021 Volulompus
+                <p>
+                    <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
+                </p>
+                <!--
+                    En forskjell mellom <p> og <div>, er at <p> legger til margin over og under automatisk, men <div> gjør ikke.
+                -->
+                <p class="hmm_b">
+                    <a href="fun.html" class="a_button">Hmmm</a>
+                    <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

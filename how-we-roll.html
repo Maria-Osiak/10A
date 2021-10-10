@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HowWeRoll prototype Skjema</title>
+    <title>10A How-We-Roll Skjema</title>
     <!-- Med denne filen ønsker vi å bevise at vi kan samle inn data ... -->
     <style>
+    /*
+    "Cascading Style Sheets (CSS) is a simple mechanism for adding style
+    (e.g., fonts, colors, spacing) to Web documents."
+    Bos.B. (08.10.2021). WHAT IS CSS?. Fra https://www.w3.org/Style/CSS/#specs (10.10.2021)
+    */
     body {
         margin: 0px;
         height: 100%;
@@ -144,16 +149,23 @@
     /*---- hidden ----*/
     </style>
     <!--
-       [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
-       [::::::[    [::[             [::[   [::[   [::[  [::[
-         [::[      [::[             [::[   [::[   [::[  [::[
-         [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
-         [::[          [::[         [::[   [::[         [::[
-       [::::::[        [::[         [::[   [::[         [::[
-       [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+    [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+    [::::::[    [::[             [::[   [::[   [::[  [::[
+      [::[      [::[             [::[   [::[   [::[  [::[
+      [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+      [::[          [::[         [::[   [::[         [::[
+    [::::::[        [::[         [::[   [::[         [::[
+    [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
     -->
 </head>
-<body>
+<body>  <!-- body har egen bakgrunn som fylle inn dersom bruker klarer å se utenfor det som regnes som viewport -->
+<!--
+    "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure
+    of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation
+    (CSS) or functionality/behavior (JavaScript)."
+    MDN contributors. (03.10.2021). HTML: HyperText Markup Language. Fra
+    https://developer.mozilla.org/en-US/docs/Web/HTML (sett 10.10.2021)
+-->
 <div id="background"> <!-- gir den blå bakgrunnsfargen -->
     <div id="main_wrapper">     <!-- skilder bakgrunnen fra resten av innholdet på siden -->
         <div id="banner">   <!-- toppen av siden-->
@@ -262,6 +274,13 @@
     </div>
 </div>
 <script>
+//  "JavaScript (JS) is a lightweight, interpreted, or "just-in-time" compiled programming language with first-class
+//  functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also
+//  use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm,
+//  single-threaded, dynamic language, supporting object-oriented, imperative, and declarative
+//  (e.g. functional programming) styles. Read more about JavaScript."
+//  MDN contributors. (28.07.2021). JavaScript. Fra https://developer.mozilla.org/en-US/docs/Web/JavaScript (sett 10.10.2021)
+
     // Example POST method implementation using fetch:
     async function postData(url = '', data = {}) {
         // Default options are marked with *

@@ -33,36 +33,36 @@ slipper vi å krølle til selvet main filer.
   - Hva vi liker
 - Vi unngikk å skrive noe privat informasjon som, mobil nr eller epost adresse.
 
-- Aron: 
-![](Bilder-b/AronVisittkort.png)
+- Fra Aron: 
+![](Bilder/Bilder-b/AronVisittkort.png)
 
 
-- Glenn: 
-![](Bilder-b/GlennVisittkort.jpg)
-![](Bilder-b/GlennVisittkort2.jpg)
-![](Bilder-b/GlennVisittkort3.jpg)
+- Fra Glenn: 
+![](Bilder/Bilder-b/GlennVisittkort.jpg)
+![](Bilder/Bilder-b/GlennVisittkort2.jpg)
+![](Bilder/Bilder-b/GlennVisittkort3.jpg)
 
 
-- Maria:
-![](Bilder-b/MariaVisittkort.png)
+- Fra Maria:
+![](Bilder/Bilder-b/MariaVisittkort.png)
 
 
-- Trym:
-![](Bilder-b/TrymVisittkort.png)
+- Fra Trym:
+![](Bilder/Bilder-b/TrymVisittkort.png)
 
 
-- Mikal:
-![](Bilder-b/MikalVisittkort.jpg)
-![](Bilder-b/Mikal_business_cards.png)
+- Fra Mikal:
+![](Bilder/Bilder-b/MikalVisittkort.jpg)
+![](Bilder/Bilder-b/Mikal_business_cards.png)
 
 
 ### How We Roll:
 - Først begynte vi å tegne og lage en skisse på tavle under gruppearbeid, der vi tegnet en brukerreise med linker til de 
 forskjellige sidene for å forstå oppsettet og hjelpe oss med visualisering.
 - Gruppa: 
-![](Bilder-b/HWRlayout.jpg)
+![](Bilder/Bilder-b/HWRlayout.jpg)
 - Glenn:
-![](Bilder-b/GlennHWRlayout.jpg)
+![](Bilder/Bilder-b/GlennHWRlayout.jpg)
 
 - Gruppelederen la ut noen spørsmål relatert til HWR på vår gruppe-discord:
 
