@@ -1,18 +1,4 @@
-# Welcome to Group 10A's Repository
-
-Group Participants | Github links
----|---
-**Glenn J. Bakklund** | *[https://github.com/GlennJoakimB](https://github.com/GlennJoakimB)*
-**Trym Falkum** | *[https://github.com/trfa2](https://github.com/trfa2)*
-**Mikal Sand** | *[https://github.com/AfGhost](https://github.com/AfGhost)*
-**Aron Sæther** | *[https://github.com/AronSaether](https://github.com/AronSaether)*
-**Maria Osiak** | *[https://github.com/Maria-Osiak](https://github.com/Maria-Osiak)*
-
-### Link to our Github page
-[https://maria-osiak.github.io/10A/](https://maria-osiak.github.io/10A/)
-
-
-
+# How We Roll - Gruppe 10A
 
 ## Repository info:
 Hovedrepositoryen er delt opp i en branch til hver, og kun det nødvendige blir dratt inn på main branchen.
