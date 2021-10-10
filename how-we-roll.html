@@ -8,210 +8,260 @@
     <!-- Med denne filen ønsker vi å bevise at vi kan samle inn data ... -->
     <style>
     body {
-    margin: 0px;
+        margin: 0px;
         height: 100%;
         font-family: sans-serif;
-        background: rgba(0, 255, 247, 0.3);
+        background: rgba(20,20,20,1);
+    }
+    #background {
+        min-height: 100vh;
+        background: linear-gradient(180deg, rgba(63,190,251,1) 0%, rgba(20,20,20,1) 100%);
+        background-repeat: no-repeat;
+    }
+
+    /*---- placement for containers -----*/
+    #main_wrapper {
+        max-width: 1100px;
+        padding: 5px;
+        background: #fff;
+        margin: 0px auto 0px;
+    }
+    #banner {
+        background: #fff;
     }
     #nav_container {
         background: rgba(59,180,237,1);
         border-radius: 5px;
-        margin: 0px 10px;
-        }
+    }
+    #main_container {
+        overflow: hidden;
+        margin: 60px 0px 10px;
+        border-bottom: 1px solid grey;
+    }
+    #footer {
+        min-height: 100px;
+        padding: 5px 20px 40px;
+    }
+    /*---- placement for containers -----*/
+
+
     /*---- Nav Bar ----*/
-        .navigation {
+    .navigation {
+        max-width: 500px;
+        margin: 0 auto;
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        }
-        a.nav_button {
-        margin: 0 15px;
+        flex-flow: wrap;
+    }
+    a.nav_button {
+        margin: 0 auto;
         padding: 10px;
         color: #000000;
         text-align: center;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         border-radius: 10px;
-        }
-        a.nav_button:hover {
+    }
+    a.nav_button:hover {
         background-color: rgba(0, 0, 0, 0.25);}
-        a.nav_button:active {
+    a.nav_button:active {
         background-color: rgba(0, 0, 0, 0.50);}
-        /*---- Nav Bar ----*/
+    /*---- Nav Bar ----*/
 
-     .data {
-        background: #fff;
+
+    /*---- Paragraphs ----*/
+    h1 {
+        padding-left: 20px;
+        font: bold 40px Arial;
+    }
+    h2 {
+        padding-left: 20px;
+        font: bold 25px Arial;
+        border-bottom: 1px solid grey;
+    }
+    h3 {
+        padding-left: 20px;
+        margin-top: 0;
+        font-size: 20px;
+    }
+    .para { /*paragraf*/
+        margin-bottom: 20px;
+    }
+    .divi {	/*divisjon, eller større paragraf med tittel*/
+        margin-bottom: 80px;
+    }
+    .data {
+        #background: #fff;
         padding: 10px;
         margin: 10px;
         max-width: 350px;
         border-radius: 10px;
         box-shadow: 0px 5px 10px grey;
-        }
-    .data {
-        padding: 10px;
-        #margin: 10px;
-        max-width: 350px;
-        border-radius: 10px;
-        #box-shadow: 0px 5px 10px grey;
     }
-        /*---- Group name heading ----*/
-    h4{
-        padding-left: 20px;
-        font: bold 20px Arial;
-        }
-
-    #footer {
-        min-height: 100px;
-        padding: 5px 20px 40px;
-        }
     #result_button {
-    margin: 10px;
-    }
-    #parameter {
-    margin: 10px;
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-weight: bold;
+        margin: 10px;
     }
     #text_1 {
-    font-weight: bold;
+        font-weight: bold;
     }
-    #nav_container {
-    font-weight: bold;
+    form {
+        margin: 0 30px;
+    }
+    .formdata {
+        background: lightgrey;
+        border: 1px solid;
+        margin: 0 20px;
+        min-height: 150px;
+    }
+
+
+    /*---- a_buttons (i footer)----*/
+    .a_button {
+    background-color: rgba(20, 20, 20, 0.2);
+    color: #000000;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+    }
+    .a_button:hover {background-color: rgba(0, 0, 0, 0.4);}
+    .a_button:active {background-color: rgba(0, 0, 0, 0.6);}
+    .a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
+    /*---- a_buttons ----*/
+
+
+    /*---- hidden ----*/
+    .think {
+    opacity: 0;
+    width: 60px;
+    position: absolute;
+    transition: all 0.5s ease-in-out .5s;
+    }
+    .hmm_b {width: 150px;}
+    .hmm_b:hover .think {
+    opacity: 1;
     }
     /*---- hidden ----*/
-        .think {
-           opacity: 0;
-           width: 60px;
-           position: absolute;
-           transition: all 0.5s ease-in-out .5s;
-        }
-    .hmm_b:hover .think {
-        opacity: 1;
-        }
-
-
-     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
     </style>
- <!--
-    [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
-    [::::::[    [::[             [::[   [::[   [::[  [::[
-      [::[      [::[             [::[   [::[   [::[  [::[
-      [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
-      [::[          [::[         [::[   [::[         [::[
-    [::::::[        [::[         [::[   [::[         [::[
-    [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
- -->
+    <!--
+       [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+       [::::::[    [::[             [::[   [::[   [::[  [::[
+         [::[      [::[             [::[   [::[   [::[  [::[
+         [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+         [::[          [::[         [::[   [::[         [::[
+       [::::::[        [::[         [::[   [::[         [::[
+       [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+    -->
 </head>
 <body>
-<div>
-    <div id="nav_container">   <!--sidecontainer på siden-->
-        <div id="h1">
-            <h4>Gruppe 10A</h4>
+<div id="background"> <!-- gir den blå bakgrunnsfargen -->
+    <div id="main_wrapper">     <!-- skilder bakgrunnen fra resten av innholdet på siden -->
+        <div id="banner">   <!-- toppen av siden-->
+            <div id="h1">
+                <h1>Gruppe 10A</h1>
+            </div>
         </div>
-        <nav class="navigation">
-            <a href="index.html" class="nav_button">Home</a>
-            <!--<a href="how-we-roll.html" class="nav_button">How We Roll</a>-->
-            <a href="hwr-report.html" class="nav_button">HWR-report</a>
-        </nav>
+        <div id="nav_container">   <!--sidecontainer på siden-->
+            <nav class="navigation">
+                <a href="index.html" class="nav_button">Home</a>
+                <a href="how-we-roll.html" class="nav_button">How We Roll</a>
+                <a href="hwr-report.html" class="nav_button">HWR-report</a>
+            </nav>
+        </div>
+        <!-- Issue se https://html.spec.whatwg.org/multipage/forms.html#introduction-4 -->
+        <div id="main_container">
+            <div class="divi">
+                <div class="para">
+                    <h2>How We Roll registrering:</h2>
+                    <form>
+                        <div class="data" id="text_1">
+                            <p><label for="data01">Name</label>
+                                <input type="text" name="Name" id="data01" /></p>
+                            <p><label for="data02">Age</label>
+                                <input type="text" name="Age" id="data02" /></p>
+                            <p><label for="data03">Gender</label>
+                                <input type="text" name="Gender" id="data03" /></p><br>
+                        </div>
+                        <br>
+                        <h3 id="parameter">HowWeRoll-Parametre:</h3>
+                        <div class="data">
+                            <!-- coop - cooperate or alone -->
+                            <label for="coop">Jobbe i team</label>
+                            <input type="range" id="coop" name="coop" value="50">
+                            <label for="coop">Jobbe alene</label><br><br>
+                            <!-- Jobber best i team [0] eller alene [100] -->
+
+                            <!-- bird - early bird or an owl -->
+                            <label for="bird">Morgenfugl</label>
+                            <input type="range" id="bird" name="bird" value="50">
+                            <label for="bird">Nattugle</label><br><br>
+                            <!-- Er en morgenfugl [0] eller natt menneske [100] -->
+
+                            <!-- wake - wake up or not -->
+                            <label for="wake">Liker å stå opp</label>
+                            <input type="range" id="wake" name="wake" value="50">
+                            <label for="wake">Liker ikke</label><br><br>
+                            <!-- Liker å stå opp om morgenen[0] eller liker ikke [100] -->
+
+                            <!-- help - ask for help or not -->
+                            <label for="help">Spør om hjelp</label>
+                            <input type="range" id="help" name="help" value="50">
+                            <label for="help">Klarer meg</label><br><br>
+                            <!-- Flink til å spørre om hjelp [0] eller ikke [100] -->
+
+                            <!-- happy - thrive at the university -->
+                            <label for="happy">Trives på UiA</label>
+                            <input type="range" id="happy" name="happy" value="50">
+                            <label for="happy">Trives ikke</label><br><br>
+                            <!-- Jeg trives på UiA [0] eller trives ikke [100] -->
+
+                            <!-- study - love to study -->
+                            <label for="study">Elsker å studere</label>
+                            <input type="range" id="study" name="study" value="50">
+                            <label for="study">Elsker ikke</label><br><br>
+                            <!-- Jeg elsker å studere [0] eller elsker ikke [100] -->
+
+                            <!-- notice - good at letting group members know -->
+                            <label for="notice">Gir beskjed</label>
+                            <input type="range" id="notice" name="notice" value="50">
+                            <label for="notice">Gir ikke beskjed</label><br><br>
+                            <!-- Flink til å gi beskjed [0] eller ikke flink [100] -->
+                        </div>
+                        <div class="data">
+                            <label>Antall timer brukt på studie i uken:
+                                <select name="Studerer i uken">
+                                    <option value="ten">10</option>
+                                    <option value="twenty">20</option>
+                                    <option value="thirty">30</option>
+                                    <option value="forty">40</option>
+                                    <option value="fifty" disabled>50</option>
+                                </select>
+                            </label>
+                        </div>
+                        <button id="result_button" type="submit">Lagre</button>
+                    </form>
+                </div>
+                <div class="results">
+                    <h2>Form Data:</h2>
+                    <pre class="formdata"></pre>
+                </div>
+            </div>
+        </div>
+        <div id="footer">   <!--boks på bunden-->
+            <div class="para">
+                2021 Volulompus
+                <p>
+                    <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
+                </p>
+                <p class="hmm_b">
+                    <a href="fun.html" class="a_button">Hmmm</a>
+                    <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
+                </p>
+            </div>
+        </div>
     </div>
 </div>
-    <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
-    <!-- Issue se https://html.spec.whatwg.org/multipage/forms.html#introduction-4 -->
-    <hr>
-    <form>
-        <div class="data" id="text_1">
-            <p><label for="data01">Name</label>
-                <input type="text" name="Name" id="data01" /></p>
-
-            <p><label for="data02">Age</label>
-                <input type="text" name="Age" id="data02" /></p>
-
-            <p><label for="data03">Gender</label>
-                <input type="text" name="Gender" id="data03" /></p><br>
-        </div><br>
-
-        <p id="parameter">HowWeRoll-Parametre:</p>
-        <div class="data">
-            <p>
-                <!-- coop - cooperate or alone -->
-                <label for="coop">Jobbe i team</label>
-                <input type="range" id="coop" name="coop" value="50">
-                <label for="coop">Jobbe alene</label><br><br>
-                <!-- Jobber best i team [0] eller alene [100] -->
-
-                <!-- bird - early bird or an owl -->
-                <label for="bird">Morgenfugl</label>
-                <input type="range" id="bird" name="bird" value="50">
-                <label for="bird">Nattugle</label><br><br>
-                <!-- Er en morgenfugl [0] eller natt menneske [100] -->
-
-                <!-- wake - wake up or not -->
-                <label for="wake">Liker å stå opp</label>
-                <input type="range" id="wake" name="wake" value="50">
-                <label for="wake">Liker ikke</label><br><br>
-                <!-- Liker å stå opp om morgenen[0] eller liker ikke [100] -->
-
-                <!-- help - ask for help or not -->
-                <label for="help">Spør om hjelp</label>
-                <input type="range" id="help" name="help" value="50">
-                <label for="help">Klarer meg</label><br><br>
-                <!-- Flink til å spørre om hjelp [0] eller ikke [100] -->
-
-                <!-- happy - thrive at the university -->
-                <label for="happy">Trives på UiA</label>
-                <input type="range" id="happy" name="happy" value="50">
-                <label for="happy">Trives ikke</label><br><br>
-                <!-- Jeg trives på UiA [0] eller trives ikke [100] -->
-
-                <!-- study - love to study -->
-                <label for="study">Elsker å studere</label>
-                <input type="range" id="study" name="study" value="50">
-                <label for="study">Elsker ikke</label><br><br>
-                <!-- Jeg elsker å studere [0] eller elsker ikke [100] -->
-
-                <!-- notice - good at letting group members know -->
-                <label for="notice">Gir beskjed</label>
-                <input type="range" id="notice" name="notice" value="50">
-                <label for="notice">Gir ikke beskjed</label><br><br>
-                <!-- Flink til å gi beskjed [0] eller ikke flink [100] -->
-            </p>
-        </div><br>
-
-        <div class="data">
-            <p>
-                <label>Antall timer brukt på studie i uken:
-                    <select name="Studerer i uken">
-                        <option value="ten">10</option>
-                        <option value="twenty">20</option>
-                        <option value="thirty">30</option>
-                        <option value="forty">40</option>
-                        <option value="fifty" disabled>50</option>
-                    </select>
-                </label>
-            </p>
-        </div><br>
-
-        <button id="result_button" type="submit">Evaluer</button>
-    </form>
-
-     <div class="results">
-         <h2>Form Data</h2>
-         <pre></pre>
-     </div>
-<div id="footer">   <!--boks på bunden-->
-    <div class="para">
-        2021 Volulompus
-        <p>
-            <a href="https://github.com/Maria-Osiak/10A" class="a_button">GitHub Repository</a>
-        </p>
-        <p class="hmm_b">
-            <a href="fun.html" class="a_button">Hmmm</a>
-            <img src="Bilder/hmm/twitter-thinking-emoji.png" alt="Hmm" class="think">
-        </p>
-    </div>
-</div>
-
-    <script>
+<script>
     // Example POST method implementation using fetch:
     async function postData(url = '', data = {}) {
         // Default options are marked with *
@@ -243,6 +293,6 @@
     }
     const form = document.querySelector('form');
     form.addEventListener('submit', handleSubmit);
-    </script>
+</script>
 </body>
 </html>
