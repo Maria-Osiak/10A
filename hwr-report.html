@@ -6,144 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>10A hwr-report</title>
     <style>
-    body {
-    margin: 0px;
-        height: 100%;
-        font-family: sans-serif;
-        background: rgba(0, 255, 247, 0.3);
-        }
-        /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+		body {
+			margin: 0px;
+			height: 100%;
+			font-family: sans-serif;
+			background: rgba(20,20,20,1);
+		}
+		#background {
+			min-height: 100vh;
+			background: linear-gradient(180deg, rgba(63,190,251,1) 0%, rgba(20,20,20,1) 100%);
+			background-repeat: no-repeat;
+		}
 
-        #med_pref {
-            border-radius: 30px;        /* hjørner på slider boxen */
-            float: right;
-            flex-flow: row wrap;
-            width: 40%;
-            position: fixed;
-            top: 170px;
-            right: 40px;
-            font-size: 16px;
-            box-shadow: 0px 5px 10px grey;
-        }
-
-        #main_container {
-        }
-
-        /*---- sirkler -----*/
-    #GlennC {
-      width: 50px;
-      height: 50px;
-      -webkit-border-radius: 25px;
-      -moz-border-radius: 25px;
-      border-radius: 25px;
-      background-color: rgba(174, 255, 171, 1);
-    }
-    #MikalC {
-      width: 50px;
-      height: 50px;
-      -webkit-border-radius: 25px;
-      -moz-border-radius: 25px;
-      border-radius: 25px;
-      background-color: rgba(0, 255, 247, 1);
-    }
-    #TrymC {
-      width: 50px;
-      height: 50px;
-      -webkit-border-radius: 25px;
-      -moz-border-radius: 25px;
-      border-radius: 25px;
-      background-color: rgba(200, 227, 45, 1);
-    }
-    #MariaC {
-      width: 50px;
-      height: 50px;
-      -webkit-border-radius: 25px;
-      -moz-border-radius: 25px;
-      border-radius: 25px;
-      background-color: rgba(66, 135, 245, 1);
-    }
-    #AronC {
-      width: 50px;
-      height: 50px;
-      -webkit-border-radius: 25px;
-      -moz-border-radius: 25px;
-      border-radius: 25px;
-      background-color: rgba(135, 50, 168, 1);
-    }
-    /*---- sirkler -----*/
+		/*---- placement for containers -----*/
+		#main_wrapper {
+			max-width: 1100px;
+			padding: 5px;
+			background: #fff;
+			margin: 0px auto 0px;
+		}
+		#banner {
+			background: #fff;
+		}
+		#nav_container {
+			background: rgba(59,180,237,1);
+			border-radius: 5px;
+		}
+		#main_container {
+			overflow: hidden;
+			margin: 60px 0px 10px;
+			border-bottom: 1px solid grey;
+		}
+		#footer {
+			min-height: 100px;
+			padding: 5px 20px 40px;
+		}
+		/*---- placement for containers -----*/
 
 
+		/*---- Nav Bar ----*/
+		.navigation {
+			max-width: 500px;
+			margin: 0 auto;
+			display: flex;
+			flex-flow: wrap;
+		}
+		a.nav_button {
+			margin: 0 auto;
+			padding: 10px;
+			color: #000000;
+			text-align: center;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			border-radius: 10px;
+		}
+		a.nav_button:hover {
+			background-color: rgba(0, 0, 0, 0.25);}
+		a.nav_button:active {
+			background-color: rgba(0, 0, 0, 0.50);}
+		/*---- Nav Bar ----*/
 
-     #nav_container {
-        background: rgba(59,180,237,1);
-        border-radius: 5px;
-        margin: 0px 10px;
-        font-weight: bold;
-        }
 
-        /*---- Group name heading ----*/
-     h4{
-        padding-left: 20px;
-        font: bold 20px Arial;
-        }
+		/*---- Paragraphs ----*/
+		h1 {
+			padding-left: 20px;
+			font: bold 40px Arial;
+		}
+		h2 {
+			padding-left: 20px;
+			font: bold 25px Arial;
+			border-bottom: 1px solid grey;
+		}
+		h3 {
+			margin-top: 0;
+			font-size: 20px;
+		}
+		.para { /*paragraf*/
+			margin-bottom: 20px;
+		}
+		.divi {	/*divisjon, eller større paragraf med tittel*/
+			margin-bottom: 80px;
+		}
+		.color { /*et skjult div-elementer som canvas henter fargene fra*/
+			position: absolute;
+			display: hidden;
+		}
+		#resultat {
+			display: flex;
+			width: 100%;
+		}
+		#med_pref {	/*canvas-element*/
+			width: 60%;
+			margin: 0 auto;
+			padding: 15px;
+			border-radius: 30px;        /* hjørner på slider boxen */
+			box-shadow: 0px 5px 10px grey;
+		}
+		/*---- Paragraphs ----*/
 
-        /*---- Nav Bar ----*/
-     .navigation {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        }
-        a.nav_button {
-        margin: 0 15px;
-        padding: 10px;
-        color: #000000;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-        border-radius: 10px;
-        }
-        a.nav_button:hover {
-        background-color: rgba(0, 0, 0, 0.25);}
-        a.nav_button:active {
-        background-color: rgba(0, 0, 0, 0.50);}
-        /*---- Nav Bar ----*/
 
-    .color {
-        background-color: rgba(0, 255, 247, 0.1);
-        padding: 10px;
-        margin: 10px;
-        border-radius: 30px;
-        box-shadow: 0px 5px 10px grey;
-        }
+		/*---- a_buttons (i footer)----*/
+		.a_button {
+			background-color: rgba(20, 20, 20, 0.2);
+			color: #000000;
+			padding: 5px;
+			text-align: center;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			border-radius: 10px;
+		}
+		.a_button:hover {background-color: rgba(0, 0, 0, 0.4);}
+		.a_button:active {background-color: rgba(0, 0, 0, 0.6);}
+		.a_button:active:after {background-color: rgba(0, 0, 0, 0.4);}
+		/*---- a_buttons ----*/
 
-    #parameter {
-        margin: 40px;
-        font-family: "Lucida Console", "Courier New", monospace;
-        font-weight: bold;
-        font-size: 20px
-        border-radius: 10px;
-        float: right;
-        width: 40%;                         /* Parameter størrelsen (på boksen) */
-        position: fixed;        /* Parameter plassering "fixed" på skjermen (flytter seg med skjermen) */
-        top: 100px;                         /* Parameter plassering (top/bottom) */
-        right: -25px;                       /* Parameter plassering (høyre/venstre) */
-        font-size: 18px;
-    }
-    #footer {
-        min-height: 100px;
-        padding: 5px 20px 40px;
-        }
-        /*---- hidden ----*/
-    .think {
-           opacity: 0;
-           width: 60px;
-           position: absolute;
-           transition: all 0.5s ease-in-out .5s;
-        }
-    .hmm_b:hover .think {
-        opacity: 1;
-        }
 
+		/*---- hidden ----*/
+		.think {
+			opacity: 0;
+			width: 60px;
+			position: absolute;
+			transition: all 0.5s ease-in-out .5s;
+		}
+		.hmm_b {width: 150px;}
+		.hmm_b:hover .think {
+			opacity: 1;
+		}
+		/*---- hidden ----*/
     </style>
     <!--
 
@@ -157,45 +146,37 @@
 
     -->
 </head>
-<body>
-<div id="main_wrapper">     <!-- holder alt på siden -->
+<body> 	<!-- har egen bakgrund for å fylle inn dersom viewport regnes som mindre enn det bruker kan se -->
+<div id="background"> <!-- gir den blå bakgrunnsfargen -->
+<div id="main_wrapper">     <!-- skilder bakgrunnen fra resten av innholdet på siden -->
+	<div id="banner">   <!-- toppen av siden-->
+		<div id="h1">
+			<h1>Gruppe 10A</h1>
+		</div>
+	</div>
     <div id="nav_container">   <!--sidecontainer på siden-->
-        <div id="h1">
-            <h4>Gruppe 10A</h4>
-        </div>
         <nav class="navigation">
             <a href="index.html" class="nav_button">Home</a>
             <a href="how-we-roll.html" class="nav_button">How We Roll</a>
-            <!--
             <a href="hwr-report.html" class="nav_button">HWR-report</a>
-            -->
         </nav>
     </div>
     <div id="main_container">   <!-- container for hovedinhold -->
-        <div> <!-- Script henter fargene her -->
-            <div class="color">
-                <h3>Glenn Joakim Bakklund</h3>
-                    <div id="GlennC" style="color: rgba(174, 255, 171, 1);"></div>
-                <h3>Aron Sæther</h3>
-                    <div id="AronC" style="color: rgba(135, 50, 168, 1);"></div>
-                <h3>Trym Falkum</h3>
-                    <div id="TrymC" style="color: rgba(200, 227, 45, 1);"></div>
-                <h3>Mikal Sand</h3>
-                    <div id="MikalC" style="color: rgba(0, 255, 247, 1);"></div>
-                <h3>Maria Osiak</h3>
-                    <div id="MariaC" style="color: rgba(66, 135, 245, 1);"></div>
-            </div>
-
-        </div>
-
-        <div id="medlemmer">
-            <p id="parameter">HowWeRoll-Parametre resultat:</p>   <!-- Legge til farger og navn for å identifisere hver av oss med dotter på en linje? -->
-
-        </div>
-
-        <canvas id="med_pref" width="500" height="400" style="border:1px solid #000000;"></canvas><!-- Tegnes med JS, her kommer grafen -->
+		<div class="divi">
+			<h2>HowWeRoll-Parametre resultat:</h2>
+			<div id="resultat">
+				<canvas id="med_pref" width="470" height="500"></canvas><!-- Tegnes med JS, her kommer grafen -->
+			</div>
+			<div class="color">
+				<div id="GlennC" style="color: rgba(255, 140, 0, 1);"></div>
+				<div id="AronC" style="color: rgba(135, 50, 168, 1);"></div>
+				<div id="TrymC" style="color: rgba(200, 227, 45, 1);"></div>
+				<div id="MikalC" style="color: rgba(0, 255, 247, 1);"></div>
+				<div id="MariaC" style="color: rgba(66, 135, 245, 1);"></div>
+			</div>
+		</div>
     </div>
-    <div id="footer">   <!--boks på bunden-->
+	<div id="footer">   <!--boks på bunden-->
         <div class="para">
             2021 Volulompus
             <p>
@@ -208,6 +189,7 @@
         </div>
     </div>
 </div>
+</div>
 <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
 
 <script>
@@ -218,40 +200,40 @@
         ctx.beginPath();    //begynner å tegne
         ctx.font = "1em Arial"; //font og tekststørrelse
 
-        ctx.moveTo(130,50);   //linje start x=100 y=50
-        ctx.lineTo(330,50);    //linje slutt x=300 y=50
-        ctx.fillText("Jobbe i team",0,50);   //skrive tekst x=0 y=250
-        ctx.fillText("Jobbe alene",350,50);   //skrive tekst x=500 y=250
-
-        ctx.moveTo(130,100);
-        ctx.lineTo(330,100);
-        ctx.fillText("Morgenfugl",0,100);
-        ctx.fillText("Nattugle",350,100);
-
-        ctx.moveTo(130,150);
-        ctx.lineTo(330,150);
-        ctx.fillText("Liker å stå opp",0,150);
-        ctx.fillText("Liker ikke",350,150);
+        ctx.moveTo(130,150);   //linje start x=100 y=150
+        ctx.lineTo(330,150);    //linje slutt x=300 y=150
+        ctx.fillText("Jobbe i team",0,150);   //skrive tekst x=0 y=150
+        ctx.fillText("Jobbe alene",350,150);   //skrive tekst x=350 y=150
 
         ctx.moveTo(130,200);
         ctx.lineTo(330,200);
-        ctx.fillText("Spør om hjelp",0,200);
-        ctx.fillText("Klarer seg",350,200);
+        ctx.fillText("Morgenfugl",0,200);
+        ctx.fillText("Nattugle",350,200);
 
         ctx.moveTo(130,250);
         ctx.lineTo(330,250);
-        ctx.fillText("Trives på UiA",0,250);
-        ctx.fillText("Trives ikke",350,250);
+        ctx.fillText("Liker å stå opp",0,250);
+        ctx.fillText("Liker ikke",350,250);
 
         ctx.moveTo(130,300);
         ctx.lineTo(330,300);
-        ctx.fillText("Elsker å studere",0,300);
-        ctx.fillText("Elsker ikke",350,300);
+        ctx.fillText("Spør om hjelp",0,300);
+        ctx.fillText("Klarer seg",350,300);
 
         ctx.moveTo(130,350);
         ctx.lineTo(330,350);
-        ctx.fillText("Gir beskjed",0,350);
-        ctx.fillText("Gir ikke beskjed",350,350);
+        ctx.fillText("Trives på UiA",0,350);
+        ctx.fillText("Trives ikke",350,350);
+
+        ctx.moveTo(130,400);
+        ctx.lineTo(330,400);
+        ctx.fillText("Elsker å studere",0,400);
+        ctx.fillText("Elsker ikke",350,400);
+
+        ctx.moveTo(130,450);
+        ctx.lineTo(330,450);
+        ctx.fillText("Gir beskjed",0,450);
+        ctx.fillText("Gir ikke beskjed",350,450);
 
         ctx.stroke(); //ferdig å tegne
 
@@ -275,44 +257,52 @@
                 //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
 
                 //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
-                ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.beginPath();
+                ctx.fillStyle = "black";            //farge på navnet
+                ctx.fillText(data.Name,0,30);		//skriver navnet
+                ctx.arc(105,25,7,0,2 * Math.PI);   	//tegne sirkel ved navnet
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat1,150,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat2,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat3,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat4,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat5,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat6,400,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,450,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
@@ -320,11 +310,11 @@
         }); //Slutten av Glenn
 
 
-        //Trym
-        fetch('https://bacit.info/hwr/20211008104228-de0a580e3d417a9d3390efeacd5cff50.json')
+        //Aron
+        fetch('https://bacit.info/hwr/20211008103244-6c658bde9759325143a2c516a60420b3.json')
             .then(response => response.json())  //Sjekker at responsen er i .json format
             .then(data => { console.log(data)   //lister dataen opp i consoll
-            let color = document.getElementById("Trymc").style.color;   //får fargen fra element med id TrymC
+            let color = document.getElementById("TrymC").style.color;   //får fargen fra element med id TrymC
 
         //mattestykker for å forskyve alle punktene så de stemmer relativt til linjene.
             let x = 130;
@@ -338,49 +328,57 @@
                 //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
 
                 //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
-                ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.beginPath();					//begynner å tegne
+                ctx.fillStyle = "black";            //farge på navnet
+                ctx.fillText(data.Name,0,50);		//skriver navnet hvor x=0, og y=50
+                ctx.arc(105,45,7,0,2 * Math.PI);   	//tegne sirkel ved navnet
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat1,150,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat2,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat3,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat4,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat5,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat6,400,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
-        }); //Slutten av Trym
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,450,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+        }); //Slutten av Aron
 
         //Mikal
         fetch('https://bacit.info/hwr/20211008103006-31114000f3f08a1b22ceb02d903ea0ca.json')
@@ -400,44 +398,52 @@
                 //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
 
                 //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
-                ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.beginPath();					//begynner å tegne
+                ctx.fillStyle = "black";            //farge på navnet
+                ctx.fillText(data.Name,0,70);		//skriver navnet hvor x=0, og y=70
+                ctx.arc(105,65,7,0,2 * Math.PI);   	//tegne sirkel ved navnet
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat1,150,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat2,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat3,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat4,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat5,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat6,400,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,450,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
@@ -464,44 +470,52 @@
                 //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
 
                 //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
-                ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.beginPath();					//begynner å tegne
+                ctx.fillStyle = "black";            //farge på navnet
+                ctx.fillText(data.Name,130,30);		//skriver navnet hvor x=130, og y=30
+                ctx.arc(185,25,7,0,2 * Math.PI);   	//tegne sirkel ved navnet
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat1,150,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat2,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat3,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat4,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat5,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat6,400,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,450,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
@@ -509,8 +523,8 @@
         }); //Slutten av Maria
 
 
-        //Aron
-        fetch('https://bacit.info/hwr/20211008103244-6c658bde9759325143a2c516a60420b3.json')
+        //Trym
+        fetch('https://bacit.info/hwr/20211008104228-de0a580e3d417a9d3390efeacd5cff50.json')
             .then(response => response.json())  //Sjekker at responsen er i .json format
             .then(data => { console.log(data)   //lister dataen opp i consoll
             let color = document.getElementById("AronC").style.color;   //får fargen fra element med id AronC
@@ -527,49 +541,57 @@
                 //fra https://smallbusiness.chron.com/adding-decimal-visual-basic-35949.html (sett 08.10.2021)
 
                 //fra https://www.w3schools.com/html/html5_canvas.asp (sett 07.10.2021)
-                ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat1,50,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
+                ctx.beginPath();					//begynner å tegne
+                ctx.fillStyle = "black";            //farge på navnet
+                ctx.fillText(data.Name,130,50);		//skriver navnet hvor x=130, og y=50
+                ctx.arc(185,45,7,0,2 * Math.PI);   	//tegne sirkel ved navnet
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat2,100,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat1,150,7,0,2 * Math.PI);   //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat3,150,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat2,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat4,200,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat3,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat5,250,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat4,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat6,300,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat5,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
                 ctx.beginPath();                    //begynner å tegne
-                ctx.arc(dat7,350,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.arc(dat6,400,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
                 ctx.fillStyle = color;              //farge på sirkel
                 ctx.fill();                         //fyll fargen
                 ctx.stroke();                       //slutter å tegne
 
-        }); //Slutten av Aron
+                ctx.beginPath();                    //begynner å tegne
+                ctx.arc(dat7,450,7,0,2 * Math.PI);  //tegne sirkel hvor x=dat1, og y=50
+                ctx.fillStyle = color;              //farge på sirkel
+                ctx.fill();                         //fyll fargen
+                ctx.stroke();                       //slutter å tegne
+
+        }); //Slutten av Trym
 
     </script>
 </body>
