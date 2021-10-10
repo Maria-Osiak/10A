@@ -1,4 +1,4 @@
-## Welcome to Group 10A's Repository
+## **Welcome to Group 10A's Repository**
 
 Group Participants | Github links
 ---|---
