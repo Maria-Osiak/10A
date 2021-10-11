@@ -1,26 +1,15 @@
 ![](Bilder/Bilder-b/UiAlogo.png)
 
-# Welcome to Group 10A's Repository
-
-Group Participants | Github links
----|---
-**Glenn J. Bakklund** | *[https://github.com/GlennJoakimB](https://github.com/GlennJoakimB)*
-**Trym Falkum** | *[https://github.com/trfa2](https://github.com/trfa2)*
-**Mikal Sand** | *[https://github.com/AfGhost](https://github.com/AfGhost)*
-**Aron Sæther** | *[https://github.com/AronSaether](https://github.com/AronSaether)*
-**Maria Osiak** | *[https://github.com/Maria-Osiak](https://github.com/Maria-Osiak)*
-
-### Link to our Github page
-[https://maria-osiak.github.io/10A/](https://maria-osiak.github.io/10A/)
+# How We Roll - Gruppe 10A
 
 
-** **
 
 ## Repository info:
 Hovedrepositoryen er delt opp i en branch til hver, og kun det nødvendige blir dratt inn på main branchen.
 Alle som endrer ting og jobber med sine filer, bruker sin branch først før evt merging om det godkjennes. På denne måten
 slipper vi å krølle til selvet main filer.
-** **
+
+
 ### Visittkort:
 - Alle tegnet sine ideer i forhold til visittkort layout/designet.
 - Noen tegnet digitalt og noen på papir og noen begge deler.
@@ -56,7 +45,7 @@ slipper vi å krølle til selvet main filer.
 - Fra Mikal:
 ![](Bilder/Bilder-b/MikalVisittkort.jpg)
 ![](Bilder/Bilder-b/Mikal_business_cards.png)
-** **
+
 
 ### How We Roll:
 - Først begynte vi å tegne og lage en skisse på tavle under gruppearbeid, der vi tegnet en brukerreise med linker til de 
@@ -85,7 +74,7 @@ Dermed ble en liten avvik når det gjaldt selvet kortene, men vi beholdt side op
 Noen få ting måtte endre grunnet visittkort endringene.
 - Tilslutt fikk vi skrevet en script for å vise det samlede resultatet fra spørreskjema.
 - Skripting er noe som vi fortsatt er ganske nye og uvitene på.
-** **
+
 
 ### Litt om utfordringer:
 Vi begynte tidlig med å opprette gruppe-discord for å lett dele filer og beskjeder mellom hverandre.
@@ -97,11 +86,11 @@ Utfordringene har vært å forstå de forskjellige oppgavene, men så fort det e
 og utføre oppgavene.
 Utfordringene er fortsatt at alle er ikke på lik linje når det gjelder å forstå GitBash/GitHub og andre verktøy som 
 IntelliJ/Visual Studio som vi bruker. -Aron
-** **
+
 ### Verktøy brukt:
 I begynnelsen brukte vi ikke mange verktøy utenom Github og GitHub/GitBash, men Glenn satte seg fort inn i IntelliJ 
 og foreslo det til oss. Etterhvert begynte noen av oss å bruke både IntelliJ og også Visual Studio for å lære litt mer om forskjellene og bruken.
 Noen av oss har også lastet ned GitDesktop som gjør det lettere med pull/push osv., men valgte å 
 ikke bruke den så mye, for å lære og bli mer vant til kommandoer direkte i GitBash.
   -Aron
-** **
+
