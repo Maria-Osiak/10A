@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Dice</title>
+
+    <style>
+        body{
+  background-image: url("Bilder/matrix-code.gif")
+}
+.container {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  font-family: 'fontawesome';
+  height: 100vh;
+}
+.container .cube {
+  position: relative;
+  left: 45%;
+  top: 40%;
+  height: 200px;
+  width: 200px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
+}
+.container .cube div {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  border:2px solid #eee;
+  color: black;
+}
+.container .cube div {
+  font-size: 32px;
+  font-family: 'fontawesome';
+}
+.container .cube .front {
+  background: rgb(166, 151, 151, 1);                     /*---- front side background color (grey now) -----*/
+  transform: translateZ(100px);
+  text-align: center;
+  padding: 50px 0 50px;
+  font-size: xx-large;
+}
+.container .cube .back {
+  background: rgb(166, 151, 151, 1);                     /*---- back side background color (grey now) -----*/
+  transform: translateZ(-100px) rotateY(180deg);
+  text-align: center;
+  padding: 50px 0 50px;
+  font-size: xx-large;
+}
+.container .cube .right {
+  background: rgb(166, 151, 151, 1);                     /*---- right side background color (grey now) -----*/
+  transform-origin: top right;
+  transform: rotateY(-270deg) translateX(100px);
+  text-align: center;
+  padding: 50px 0 50px;
+  font-size: xx-large;
+}
+.container .cube .left {
+  background: rgb(166, 151, 151, 1);                     /*---- left side background color (grey now, before #000) -----*/
+  transform-origin: center left;
+  transform: rotateY(270deg) translateX(-100px);
+  text-align: center;
+  padding: 50px 0 50px;
+  font-size: xx-large;
+}
+.container .cube .top {
+  background: rgb(166, 151, 151, 1);                     /*---- top side background color (grey now,before #ff0000) -----*/
+  transform-origin: top center;
+  transform: rotateX(-270deg) translateY(-100px);
+  text-align: center;
+  padding: 50px 0 50px;
+  font-size: xx-large;
+}
+.container .cube .bottom {
+  background: rgb(166, 151, 151, 1);                     /*---- bottom side background color (grey now) -----*/
+  transform-origin: bottom center;
+  transform: rotateX(270deg) translateY(100px);
+  text-align: center;
+  padding: 50px 0 50px;
+  font-size: xx-large;
+}
+
+.h1 {
+    color: white;
+    font-size: xxx-large;
+    text-align: top;
+    margin-bottom: -50px;
+    opacity: 0.5;
+}
+.h2 {
+    color: white;
+    font-size: x-large;
+    text-align: top;
+    margin-top: 50px;
+    margin-bottom: -550px;
+    opacity: 0.5;
+}
+
+.img {                              /*---- Dice bilde -----*/
+  text-align: right;
+  margin-bottom: -200px;
+  max-width: 100%;
+  height: content;
+  opacity: 0.5;
+  margin-left: 55%;
+  margin-right: 15%;
+}
+.img2 {                              /*---- Dice bilde -----*/
+  text-align: right;
+  margin-bottom: -200px;
+  max-width: 100%;
+  height: content;
+  opacity: 0.5;
+  margin-left: 15%;
+  margin-right: 75%;
+  margin-top: 1.80%;
+  flip: horizontal;
+}
+.option {
+    padding: 10px;
+    margin-top: 600px;
+    margin-bottom: -550px;
+    margin-left: 20px;
+    margin-right: 100px;
+    position: static;
+    font-size: x-large;
+}
+.o_buttons {
+  background-color: #424040;    /* grey/black */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+
+                        /*Rotaion animation */
+@keyframes animate {
+  25%{
+    transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
+    top: 0%;
+  }
+  50%{
+    transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
+    top: 30%;
+  }
+  75%{
+    transform: rotateX(276deg) rotateY(256deg) rotateZ(246deg);
+    top: 45%;
+  }
+  100%{
+    transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
+    top: 60%;
+  }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <div id="background">
+        <center>
+            <div class="logo">
+                <div id="img" class="img">
+                    <img src="Bilder/lightreddice.jpg" alt="Dice icon">
+                </div>
+                <div id="img2" class="img2">
+                    <img src="Bilder/lightreddice2.jpg" alt="Dice icon">
+                </div>
+                    <div class="h1">
+                        <h1>FOOD DICE</h1>
+                    </div>
+                    <div class="h2">
+                        <h2>ROLL THE DICE</h2>
+                    </div>
+            </div>
+        </center>
+        <div id="nav_container">   <!--nav-options-->
+            <nav class="option">
+                <a href="Filters" class="o_buttons">Filters</a><br><br>
+                <a href="Settings" class="o_buttons">Settings</a><br><br>
+                <a href="Favorites" class="o_buttons">Favorites</a><br><br>
+                <a href="Log" class="o_buttons">Log</a><br><br>
+            </nav>
+        </div>
+
+                                    <!-- selvet cube -->
+        <div class="container">
+            <div class="cube" id="cube">
+                <div class="front">
+                      <!-- <p> Chicken Chop Suey </p> -->
+                    <a href="/projects/10A/oppskrifter/ChickenChopSuey.pdf">Chicken Chop Suey</a>
+                </div>
+
+                <div class="back">
+                        <!-- <p> Wok </p> -->
+                    <a href="/projects/10A/oppskrifter/Wok.pdf">Wok</a>
+                </div>
+
+                <div class="top">
+                         <!-- <p> Biff Curry </p> -->
+                    <a href="/projects/10A/oppskrifter/BiffCurry.pdf">Biff Curry</a>
+                </div>
+
+                <div class="left">
+                        <!-- <p> Chicken Tikka Masala</p> -->
+                    <a href="/projects/10A/oppskrifter/ChickenTikkaMasala.pdf">Chicken Tikka Masala</a>
+                </div>
+
+                <div class="right">
+                        <!-- <p> Lasagna </p> -->
+                    <a href="/projects/10A/oppskrifter/Lasagna.pdf">Lasagna</a>
+                </div>
+
+                <div class="bottom">
+                         <!-- <p> Biff Chop Suey </p> -->
+                    <a href="/projects/10A/oppskrifter/BiffChopSuey.pdf">Biff Chop Suey</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JS CODE -->
+<script type="text/javascript">
+		let cube = document.getElementById('cube');
+
+		angleArray = [[0,0,0],[-310,-362,-38],[-400,-320,-2],[135,-217,-88],[-224,-317,5],[-47,-219,-81],[-133,-360,-53]];
+		//this array of degree that show the different number 1 2 3 4 5 6 on cube ie
+		cube.addEventListener('click',function(e){
+
+			/*ANIMATION */
+			cube.style.animation = 'animate 1.4s linear';
+
+			const randomAngle = Math.floor(Math.random() * 6) + 1;
+			//console.log(randomAngle);
+			cube.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+			cube.style.transition = '1s linear'
+
+			cube.addEventListener('animationend',function(e){
+				cube.style.animation = '';
+			});
+		});
+	</script>
+</body>
+</html>
